@@ -1,0 +1,2 @@
+# みかん
+rescue StandardError
