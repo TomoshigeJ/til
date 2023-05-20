@@ -98,3 +98,13 @@ startsWith：前方一致
 endsWith：後方一致
 */
 
+let str = 'じょんのエサは高級ドックフード'
+
+console.log(str.includes('じょん'));   // true
+console.log(str.startsWith('じょん')); // true
+console.log(str.endsWith('じょん'));   // false
+
+console.log(str.includes('フード'));   // true
+console.log(str.startsWith('フード')); // false
+console.log(str.endsWith('フード'));   // true
+
