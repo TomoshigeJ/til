@@ -192,3 +192,48 @@ console.log(str.repeat(2.8)); // じょんじょん
 console.log(str.repeat(-5));  // Uncaught RangeError: Invalid count value: -5
 
 
+/*
+normalize：文字列をUnicode正規化する
+str.normalize(form)
+	str  :対象の文字列
+	form :正規化の形式(NFD, NFC, NFKD, NFKCのいずれか)
+
+NFD(正規分解):文字を正規マッピングというルールで分解した後、正規順序で並べること
+NFC(正規合成):正規分解した結果を再度合成する
+NFKD(互換分解):文字を正規/互換マッピングというルールで分解した後、正規順序で並べること
+NFKC(互換合成):互換分解した結果を再度合計
+*/
+
+let type = ['NFD', 'NFC', 'NFKD', 'NFKC'];
+let list = ['ギガ', 'キ゛カ゛', 'ｷﾞｶﾞ', '㌐'];
+
+for (let t of type) {
+	console.log(`・${t}`);
+	for (let l of list) {
+		console.log(`${l} => ${l.normalize(t)}`);
+	}
+}
+
+/* 結果
+・NFD
+ギガ => ギガ
+キ゛カ゛ => キ゛カ゛
+ｷﾞｶﾞ => ｷﾞｶﾞ
+㌐ => ㌐
+・NFC
+ギガ => ギガ
+キ゛カ゛ => キ゛カ゛
+ｷﾞｶﾞ => ｷﾞｶﾞ
+㌐ => ㌐
+・NFKD
+ギガ => ギガ
+キ゛カ゛ => キ ゙カ ゙
+ｷﾞｶﾞ => ギガ
+㌐ => ギガ
+・NFKC
+ギガ => ギガ
+キ゛カ゛ => キ ゙カ ゙
+ｷﾞｶﾞ => ギガ
+㌐ => ギガ
+*/
+
