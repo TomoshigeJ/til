@@ -90,3 +90,11 @@ console.log(`${count}件がヒットしました！`);
 // => 4件がヒットしました！
 
 
+/*
+- `includes, startsWith, endsWith メソッド`
+文字列に特定の部分文字列が含まれているか判定
+includes：部分一致
+startsWith：前方一致
+endsWith：後方一致
+*/
+
