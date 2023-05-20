@@ -159,3 +159,21 @@ console.log(str.split());       // ['いぬ\tうさぎ\tくま\t']
 console.log(str.split('\t',2)); // ['いぬ', 'うさぎ']
 
 
+/* 
+- padStart, padEnd：文字列の前方(後方)にそれぞれの文字列が指定長になるよう補足
+```
+str.padStart(targetLength[, padString])
+str.padEnd(targetLength[, padString])
+	str          :対象の文字列
+	targetLength :最終的な文字列長
+	padString    :補う文字(省略すると空白で補う)
+```
+*/
+
+let str = '123.45'
+
+console.log(str.padStart(10));      //     123.45 (前に空白4つ)
+console.log(str.padStart(10, '0')); // 0000123.45
+console.log(str.padEnd(10, '0'));   // 123.450000
+
+
