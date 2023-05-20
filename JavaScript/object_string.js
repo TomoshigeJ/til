@@ -43,3 +43,33 @@ console.log(str.slice(12, 9));     // (空文字)
 console.log(str.substring(9, -2)); // SuperJohn
 console.log(str.slice(9, -2));     // プロジェ
 
+
+// 文字列の検索
+let str = 'じょん、わたしのなまえはすーぱーじょんです'
+
+console.log(str.indexOf('じょん'));     // 0
+console.log(str.lastIndexOf('じょん')); // 16
+
+console.log(str.indexOf('ぴょーん'));     // -1
+console.log(str.lastIndexOf('ぴょーん')); // -1
+
+console.log(str.indexOf('じょん', 5));     // 16
+console.log(str.lastIndexOf('じょん', 5)); // 0
+
+console.log(str.indexOf('', 5));     // 5
+console.log(str.lastIndexOf('', 5)); // 5
+
+console.log(str.indexOf('じょん', -5));     // 0
+console.log(str.lastIndexOf('じょん', -5)); // 0
+
+console.log(str.indexOf('じょん', 20));     // -1
+console.log(str.lastIndexOf('じょん', 20)); // 16
+
+// 大文字と小文字は区別される
+let str = 'Hello, World!!';
+console.log(str.indexOf('world')); 
+// -1 (小文字worldは見つからない)
+
+console.log(str.toLowerCase().indexOf('world'.toLowerCase()));
+// 7 (小文字で揃える)
+
