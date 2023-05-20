@@ -68,8 +68,25 @@ console.log(str.lastIndexOf('じょん', 20)); // 16
 // 大文字と小文字は区別される
 let str = 'Hello, World!!';
 console.log(str.indexOf('world')); 
-// -1 (小文字worldは見つからない)
+// => -1 (小文字worldは見つからない)
 
 console.log(str.toLowerCase().indexOf('world'.toLowerCase()));
-// 7 (小文字で揃える)
+// => 7 (小文字で揃える)
+
+// indexOfメソッドの応用(文字列の出現回数をカウントする)
+let str = 'じょんは言いました。私の名前はじょん。じょんです。じょーんじょん。';
+let count = 0;
+let keywd = 'じょん'
+let pos = str.indexOf(keywd);
+
+// マッチする文字列がなくなったらループを終了する
+while (pos != -1) {
+	count++;
+	// 前回のマッチ位置から検索を再開
+	pos = str.indexOf(keywd, pos + keywd.length);
+}
+
+console.log(`${count}件がヒットしました！`);
+// => 4件がヒットしました！
+
 
