@@ -125,3 +125,13 @@ console.log(str.startsWith('エサ', 4)); // true
 console.log(str.endsWith('エサ', 4));   // false
 
 
+/*
+- `trim, trimStart, trimEnd`：文字列の前後から空白を除去
+空白以外にも以下に該当するものは除去される
+→タブ文字(\t, \v)
+→改行文字(\r, \n)
+→フォームフィード(\f)
+→全角空白
+*/
+
+
