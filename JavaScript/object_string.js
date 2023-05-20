@@ -108,3 +108,20 @@ console.log(str.includes('フード'));   // true
 console.log(str.startsWith('フード')); // false
 console.log(str.endsWith('フード'));   // true
 
+/*
+引数の違い
+includesとstartsWith：検索開始位置
+endsWith：検査対象となる文字列の長さ
+*/
+
+let str = 'じょんのエサは高級ドックフード'
+
+console.log(str.includes('エサ', 6));   // false
+console.log(str.startsWith('エサ', 6)); // false
+console.log(str.endsWith('エサ', 6));   // true
+
+console.log(str.includes('エサ', 4));   // true
+console.log(str.startsWith('エサ', 4)); // true
+console.log(str.endsWith('エサ', 4));   // false
+
+
