@@ -8,3 +8,8 @@ console.log(dog.length);
 // => 1
 
 
+// サロゲートペアの場合
+let str = '𠀋';
+console.log([...str].length);
+// => 1
+
