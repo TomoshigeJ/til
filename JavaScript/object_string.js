@@ -28,3 +28,18 @@ console.log(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
 // => John
 
 
+// 部分文字列の取得
+let str = 'SuperJohnプロジェクト';
+
+console.log(str.charAt(9));        // プ
+console.log(str.substring(9));     // プロジェクト 
+console.log(str.substring(9, 12)); // プロジ
+console.log(str.slice(9));         // プロジェクト
+console.log(str.slice(9, 12));     // プロジ
+
+console.log(str.substring(12, 9)); // プロジ
+console.log(str.slice(12, 9));     // (空文字)
+
+console.log(str.substring(9, -2)); // SuperJohn
+console.log(str.slice(9, -2));     // プロジェ
+
