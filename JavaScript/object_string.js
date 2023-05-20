@@ -177,3 +177,18 @@ console.log(str.padStart(10, '0')); // 0000123.45
 console.log(str.padEnd(10, '0'));   // 123.450000
 
 
+/*
+repeat：文字列をn回繰り返したものを取得
+str.repeat(count)
+	str :元の文字列
+	count :繰り返し回数
+*/
+
+let str = 'じょん';
+
+console.log(str.repeat(5));   // じょんじょんじょんじょんじょん
+console.log(str.repeat(0));   // (空文字)
+console.log(str.repeat(2.8)); // じょんじょん
+console.log(str.repeat(-5));  // Uncaught RangeError: Invalid count value: -5
+
+
