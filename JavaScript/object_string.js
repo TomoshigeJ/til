@@ -144,3 +144,18 @@ console.log(str.replaceAll('じょん', 'John'));
 // => スーパーJohnとノーマルJohn
 
 
+// split：文字列を分割
+/*
+str.split(sep [, limit])
+	str   :対象の文字列
+	sep   :区切り文字
+	limit :分割回数の上限
+*/
+let str = 'いぬ\tうさぎ\tくま\t';
+
+console.log(str.split('\t'));   // ['いぬ', 'うさぎ', 'くま', '']
+console.log(str.split('\n'));   // ['いぬ\tうさぎ\tくま\t']
+console.log(str.split());       // ['いぬ\tうさぎ\tくま\t']
+console.log(str.split('\t',2)); // ['いぬ', 'うさぎ']
+
+
