@@ -44,7 +44,7 @@ Null 合体：??
 */
 
 
-// 配列の要素削除
+// delete 演算子
 let data = ['dog', 'rabbit', 'bear'];
 console.log(delete data[0]); // true
 console.log(data);           // [empty, 'rabbit', 'bear']
@@ -64,5 +64,27 @@ console.log(frameworks);             // {javascritp: 'Next.js'}
 // 変数は削除できない
 let animal = 'dog';
 console.log(delete animal); // false
+
+
+// typeof 演算子
+let number = 1;
+console.log(typeof number); // number
+
+let name = 'じょん';
+console.log(typeof name);   // string
+
+let flag = true;
+console.log(typeof flag);   // boolean
+
+let ary = ['dog', 'rabbit', 'bear'];
+console.log(typeof ary);    // object
+
+let obj = { name: 'じょん', age: 28 };
+console.log(typeof obj);    // object
+
+// 型の変換
+console.log(Boolean('じょん')); // true
+console.log(String('じょん'));  // じょん
+console.log(Number('じょん'));  // NaN
 
 
