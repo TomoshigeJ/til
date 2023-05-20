@@ -135,3 +135,12 @@ console.log(str.endsWith('エサ', 4));   // false
 */
 
 
+// replace, replaceAll：文字列を置き換える
+let str = 'スーパーじょんとノーマルじょん'
+
+console.log(str.replace('じょん', 'John'));
+// => スーパーJohnとノーマルじょん
+console.log(str.replaceAll('じょん', 'John'));
+// => スーパーJohnとノーマルJohn
+
+
