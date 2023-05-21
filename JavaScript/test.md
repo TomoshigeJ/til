@@ -1,4 +1,0 @@
-# JavaScriptとは
-- test
-- Markdown
-- サンプルコードなど
