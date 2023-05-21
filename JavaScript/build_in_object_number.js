@@ -29,3 +29,15 @@ console.log(num2.toPrecision(10));  // 123.4567800
 console.log(num2.toPrecision(6));   // 123.457
 
 
+// parseFloat / parseInt メソッド & Number 関数：文字列を数値に変換する
+let n = '123xxx';
+console.log(Number(n));            // NaN
+console.log(Number.parseFloat(n)); // 123
+console.log(Number.parseInt(n));   // 123
+
+let d = new Date();
+console.log(Number(d));            // 1684674080226
+console.log(Number.parseFloat(d)); // NaN
+console.log(Number.parseInt(d));   // NaN
+
+
