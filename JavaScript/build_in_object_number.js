@@ -58,4 +58,9 @@ console.log(Math.round(3.14));  // 3
 // 他にもたくさんある
 
 
+// Math.random：0~1未満の乱数を取得するメソッド
+let n = 100;
+console.log(Math.floor(Math.random() * (n + 1))); // 0~100の乱数が返る
+
+
 
