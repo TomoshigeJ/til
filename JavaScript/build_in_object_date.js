@@ -10,3 +10,7 @@ console.log(d); // Wed Jun 21 2023 22:50:00 GMT+0900 (日本標準時)
 let d = new Date(2023, 5, 31, 22, 50, 00);
 console.log(d); // Sat Jul 01 2023 22:50:00 GMT+0900 (日本標準時)
 
+// 月末日を求める
+let d = new Date(2023, 5, 0);
+console.log(d);  // Wed May 31 2023 00:00:00 GMT+0900 (日本標準時)
+
