@@ -41,3 +41,21 @@ console.log(Number.parseFloat(d)); // NaN
 console.log(Number.parseInt(d));   // NaN
 
 
+/*
+Math オブジェクト：基本的な数学演算を実行する
+Number関数は数値型の値を直接操作するためのオブジェクト。
+数学的な演算機能はMathオブジェクトによって提供される。
+*/
+// 絶対値
+console.log(Math.abs(-123)); //123
+
+// 最大値を求める
+console.log(Math.max(10, 99, 28)); // 99
+
+// 四捨五入
+console.log(Math.round(3.14));  // 3
+
+// 他にもたくさんある
+
+
+
