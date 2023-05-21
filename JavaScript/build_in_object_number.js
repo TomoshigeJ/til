@@ -62,5 +62,5 @@ console.log(Math.round(3.14));  // 3
 let n = 100;
 console.log(Math.floor(Math.random() * (n + 1))); // 0~100の乱数が返る
 
-
-
+let list = ['じょん', 'ジョン', 'John', 'じょーんじょーん']
+console.log(list[Math.floor(Math.random() * list.length)]); // list内のどれかがランダムに返る
