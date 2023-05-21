@@ -12,6 +12,20 @@
 →JavaScriptで安全に演算できる範囲の整数値の上限と下限を表す
 →上限下限を超えた演算は結果も保証されない
 →より大きな整数を演算するには`BigInt`の利用を検討する
-
-
 */
+
+
+// toXxxxxx メソッド：数値形式を変換する
+// それぞれの数値を指数形式に変換したり、特定の桁数に揃える為に使用する。
+let num1 = 255;
+console.log(num1.toString(16)); // ff
+console.log(num1.toString(8));  // 377
+
+let num2 = 123.45678;
+console.log(num2.toExponential(2)); // 1.23e+2
+console.log(num2.toFixed(3));       // 123.457
+console.log(num2.toFixed(7));       // 123.4567800
+console.log(num2.toPrecision(10));  // 123.4567800
+console.log(num2.toPrecision(6));   // 123.457
+
+
