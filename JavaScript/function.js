@@ -190,3 +190,14 @@ console.log(scope);
 
 
 // 即時関数
+(function() {
+	var scope = 'john';
+	console.log(scope); // john
+}).call(this);
+
+console.log(scope);   // エラー表示
+/*
+varで定義したスコープを必要最低限に留める方法。
+`.call(this);` はスコープの枠組みとして作った匿名関数を定義後すぐに実行している
+→ファイル全体を関数で括っているようなコードもある
+*/
