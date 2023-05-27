@@ -91,3 +91,13 @@ console.log(getTriangleArea); // ()を省略して関数呼び出し
 // ()を省略するとgetTriangleAreaに格納された関数定義がそのまま文字列として呼び出されている
 
 
+// ③function命令は巻き上げられる
+console.log(getTriangleArea(10, 4));
+
+function getTriangleArea(base, height) {
+	return base * height / 2;
+}
+// 関数定義より上で関数を呼び出しているがエラーにはならない。
+// function命令で宣言された関数がスコープの先頭に巻き上げられる(hoist)から。
+
+
