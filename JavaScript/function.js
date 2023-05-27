@@ -27,7 +27,7 @@ function命令以外にも以下の方法でも関数を定義できる。
 */
 
 
-// Functionコンストラクター経由の定義
+// ①Functionコンストラクター経由の定義
 let getTriangleArea = new Function(
 	'base',                     // 引数
 	'height',                   // 引数
@@ -36,3 +36,13 @@ let getTriangleArea = new Function(
 console.log(getTriangleArea(10, 4));
 // 特別な理由がなければ基本的に使用しない。
 // Function命令にない特徴としては引数や関数本体を文字列として定義できる
+
+
+// ②関数リテラルで定義する(関数式とも言う)
+let getTriangleArea = function(base, height) {
+	return base * height / 2;
+};
+console.log(getTriangleArea(10, 4));
+// 関数リテラルでは名前を持たない関数を定義したうえで、変数getTriangleAreaに格納→匿名関数、無名関数とも呼ばれる
+
+
