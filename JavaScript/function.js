@@ -78,3 +78,16 @@ console.log(getTriangleArea);
 // getTriangleAreaに関数型のリテラルを格納しているに過ぎない。その為、後から数値型などの別の型で再代入することもできる。
 
 
+// ②関数の丸かっこ()は「関数を実行する」という意味を持つ
+function getTriangleArea(base, height) {
+	return base * height / 2;
+}
+console.log(getTriangleArea); // ()を省略して関数呼び出し
+/* 結果
+ƒ getTriangleArea(base, height) {
+	return base * height / 2;
+}
+*/
+// ()を省略するとgetTriangleAreaに格納された関数定義がそのまま文字列として呼び出されている
+
+
