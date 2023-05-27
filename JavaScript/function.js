@@ -25,3 +25,14 @@ function命令以外にも以下の方法でも関数を定義できる。
 2：関数リテラルで定義する
 3：アロー関数で定義する
 */
+
+
+// Functionコンストラクター経由の定義
+let getTriangleArea = new Function(
+	'base',                     // 引数
+	'height',                   // 引数
+	'return base * height / 2;' // 関数の本体(処理)
+);
+console.log(getTriangleArea(10, 4));
+// 特別な理由がなければ基本的に使用しない。
+// Function命令にない特徴としては引数や関数本体を文字列として定義できる
