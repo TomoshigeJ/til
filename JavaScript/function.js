@@ -46,3 +46,11 @@ console.log(getTriangleArea(10, 4));
 // 関数リテラルでは名前を持たない関数を定義したうえで、変数getTriangleAreaに格納→匿名関数、無名関数とも呼ばれる
 
 
+// ③アロー関数で定義する
+let getTriangleArea = (base, height) => {
+	return base * height / 2;
+};
+console.log(getTriangleArea(10, 4));
+// functionキーワードを用いず、 =>(アロー)を用いる
+
+
