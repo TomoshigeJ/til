@@ -101,3 +101,8 @@ function getTriangleArea(base, height) {
 // function命令で宣言された関数がスコープの先頭に巻き上げられる(hoist)から。
 
 
+// ④関数リテラル、アロー関数、Functionコンストラクターでは巻き上げられない
+// function命令のように巻き上げは行われないので、上記のように先に呼び出すとエラーとなる。
+// function命令以外の関数定義方法では実行(代入)時に評価される。
+
+
