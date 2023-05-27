@@ -111,3 +111,42 @@ function getTriangleArea(base, height) {
 */
 
 
+// ローカル変数範囲確認
+function checkScope() {
+	let scope = 'blockScope'
+	return scope;
+}
+console.log(checkScope()); // blockScope
+console.log(scope);        // エラー表示
+// 関数(ブロック)内で宣言されたscopeはブロックの外から参照するとエラーになる。
+// 戻り値経由で受け渡しすればブロック外からも参照できる。(関数を呼び出すことによって)
+
+
+// ブロックスコープからグローバル変数は参照できる
+let scope = 'globalScope';
+function checkScope() {
+	return scope;
+}
+console.log(checkScope()); // globalScope
+console.log(scope);        // globalScope
+
+
+/* グローバルスコープの有効範囲
+グローバル変数のスコープはファイル間も超える。
+同一ページで複数のjsファイルをインポートした場合、一方のjsファイルから他のjsファイルで定義された変数にもアクセスができる。
+グローバル変数同士の衝突はバグの原因になりかねないので、グローバル変数は極力使用を避けるべき。→モジュールやコード全体をブロックで括るなどがよい。
+*/
+
+
+// スコープ間での識別子(変数名)の衝突
+let scope = 'globalScope';
+function getValue() {
+	let scope = 'blockScope';
+	return scope;
+}
+console.log(getValue()); // blockScope
+console.log(scope);      // globalScope
+// スコープが異なる変数は、名前が同じであっても異なる変数と見なされる→scopeの値がblockScopeで上書きされるわけではない
+
+
+
