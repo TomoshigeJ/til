@@ -66,3 +66,15 @@ console.log(getTriangleArea(10, 4));
 */
 
 
+// 関数定義の際の注意点
+// ①JavaScriptにおいて関数はデータ型の一種
+function getTriangleArea(base, height) {
+	return base * height / 2;
+}
+
+console.log(getTriangleArea(10, 4));
+getTriangleArea = 0;
+console.log(getTriangleArea);
+// getTriangleAreaに関数型のリテラルを格納しているに過ぎない。その為、後から数値型などの別の型で再代入することもできる。
+
+
