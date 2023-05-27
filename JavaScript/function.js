@@ -149,4 +149,25 @@ console.log(scope);      // globalScope
 // スコープが異なる変数は、名前が同じであっても異なる変数と見なされる→scopeの値がblockScopeで上書きされるわけではない
 
 
+// 仮変数のスコープ(基本型)
+let value = 10;
+function decrement(value) {
+	value--;
+	return value;
+}
+console.log(decrement(value)); // 9
+console.log(value);            // 10
+// 変数valueと仮引数のvalueは別物。よって関数内の仮引数への操作で元のvalueに影響はない
+
+// これが配列の場合(参照型)
+let value = [1, 2, 4, 8, 16];
+function updateArray(value) {
+	value.pop();
+	return value;
+}
+console.log(updateArray(value)); // [1, 2, 4, 8]
+console.log(value);              // [1, 2, 4, 8]
+// 参照型は値そのものではなく、値を格納したメモリ上の場所(参照値)だけを格納している型の為、参照値の値の受け渡しする場合には渡される値も参照値となる。
+
+
 
