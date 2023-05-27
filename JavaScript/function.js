@@ -77,7 +77,6 @@ getTriangleArea = 0;
 console.log(getTriangleArea);
 // getTriangleAreaに関数型のリテラルを格納しているに過ぎない。その為、後から数値型などの別の型で再代入することもできる。
 
-
 // ②関数の丸かっこ()は「関数を実行する」という意味を持つ
 function getTriangleArea(base, height) {
 	return base * height / 2;
@@ -90,7 +89,6 @@ console.log(getTriangleArea); // ()を省略して関数呼び出し
 */
 // ()を省略するとgetTriangleAreaに格納された関数定義がそのまま文字列として呼び出されている
 
-
 // ③function命令は巻き上げられる
 console.log(getTriangleArea(10, 4));
 
@@ -100,9 +98,16 @@ function getTriangleArea(base, height) {
 // 関数定義より上で関数を呼び出しているがエラーにはならない。
 // function命令で宣言された関数がスコープの先頭に巻き上げられる(hoist)から。
 
-
 // ④関数リテラル、アロー関数、Functionコンストラクターでは巻き上げられない
 // function命令のように巻き上げは行われないので、上記のように先に呼び出すとエラーとなる。
 // function命令以外の関数定義方法では実行(代入)時に評価される。
+
+
+/* スコープ
+グローバルスコープ：スクリプト全体
+関数スコープ：関数ブロック配下
+ブロックスコープ：ブロック配下
+モジュールスコープ：モジュール配下
+*/
 
 
