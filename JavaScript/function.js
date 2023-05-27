@@ -170,4 +170,15 @@ console.log(value);              // [1, 2, 4, 8]
 // 参照型は値そのものではなく、値を格納したメモリ上の場所(参照値)だけを格納している型の為、参照値の値の受け渡しする場合には渡される値も参照値となる。
 
 
+// 配列そのものを置き換えた場合は結果が変化する
+let value = [1, 2, 4, 8, 16];
+function updateArray(value) {
+	value = []
+	return value;
+}
+console.log(updateArray(value)); // []
+console.log(value);              // [1, 2, 4, 8, 16]
+// この場合は参照値そのものが変わっている為、実引数の変数valueの参照先に変化はない。
+
+
 
