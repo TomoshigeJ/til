@@ -339,3 +339,24 @@ arrayWalk(list, showElement);
 4: 16
 */
 
+
+// 例2：高階関数(arrayWalk)は書き換えずに引数の関数を変えてみる
+// 高階関数のarrayWalkを定義(ここは同じ)
+function arrayWalk(data, callback) {
+	for (let [key, value] of data.entries()) {
+		callback(value, key) // 引数callbackで指定された関数を呼び出す
+	}
+}
+
+// 違うユーザー定義関数
+let result = 0;
+function sumElement(value, key) {
+	result += value;
+}
+
+// 使ってみる
+let list = [1, 2, 4, 8, 16];
+arrayWalk(list, sumElement);
+console.log(result); // 31
+
+
