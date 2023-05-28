@@ -284,3 +284,18 @@ showD({
 // →{プロパティ名 = 規定値 , …}の形
 
 
+/* 複数の戻り値を返したい
+return命令ではreturn x, y のように複数の値を返すことはできない。
+この場合は一旦戻り値を配列やオブジェクトとして束ねる必要がある。
+*/
+function getMaxMin(...nums) {
+	return [Math.max(...nums), Math.min(...nums)]
+}
+
+let result = getMaxMin(10, 0, 28, 15, -28, 99);
+console.log(result); // [99, -28]
+
+let [max, min] = getMaxMin(10, 0, 28, 15, -28, 99);
+console.log(max, min); // 99 -28
+
+
