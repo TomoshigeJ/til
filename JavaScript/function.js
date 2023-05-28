@@ -421,5 +421,28 @@ function e(templates, ...values) {
 let name = '<"Mario" & \'Luigi\'>';
 console.log(e`こんにちは、${name}さん!`);
 // => こんにちは、&lt;&quot;Mario&quot; &amp; &#39;Luigi&#39;&gt;さん!
+/*
+→引数として「テンプレート文字列(分解したも)」と「埋め込む変数(可変長引数)」
+→戻り値として加工済みの文字列を返すこと
+この2点の条件が必要となる。
+templates：[0]が「こんにちは、」 [1]が「さん！」
+values：[0]が「name(= <”Mario” & \‘Luigi\’>」
+このvaluesをエスケープ処理(加工)して再度連結させた結果を返している。
+→templates[0] + values[0]を加工したもの + templates[1]
+*/
+
+/* 補足：String.rawメソッド
+標準ライブラリにもテンプレート文字列を修飾することを意図したタグ関数(メソッド)が用意されている。*/
+// 文字リテラルでWindowsのパス文字列を表現するのは面倒
+console.log(`C:\data\jsbook\chap06`);
+// => C:datajsbookchap06(エスケープシーケンスとみなされる)
+
+console.log(`C:\\data\\jsbook\\chap06`);
+// => C:\data\jsbook\chap06 (\を\\としなければならない)
+
+// String.rawでは楽ちん
+console.log(String.raw`C:\data\jsbook\chap06`);
+// => C:\data\jsbook\chap06 (いいね)
+// →無視されるのは「\xx」の形のみ(${式展開}は認識される)
 
 
