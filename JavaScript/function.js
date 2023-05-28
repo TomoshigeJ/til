@@ -229,3 +229,14 @@ try {
 	console.log(e.message);
 }
 // 引数の数が間違っています：2
+
+
+// 引数の規定値を設定する
+function getTriangleArea(base = 10, height = 5) {
+	return base * height / 2;
+}
+console.log(getTriangleArea());        // 25
+console.log(getTriangleArea(4));       // 10
+console.log(getTriangleArea(100, 50)); // 2500
+
+
