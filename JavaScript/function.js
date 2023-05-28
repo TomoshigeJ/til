@@ -470,3 +470,25 @@ outerFunc();
 // この場合ではinnerFunc(最内側)のスコープからouterFuncのスコープ、グローバルスコープの順に指定された変数を検索している。
 
 
+// スコープチェーンが確定するタイミングは？
+let scope = 'Global John';
+
+function scope1() {
+	console.log(scope);
+}
+
+function scope2() {
+	let scope = 'Local Scope2 John';
+	scope1();
+}
+
+scope1(); // Global John
+scope2(); // Global John
+/*
+scope2関数で新たにscope変数を定義しているにも関わらずグローバル変数がみている。
+これはスコープチェーンは関すを定義したところで決定する為。
+scope1関数がどこで呼び出されようと、形成されるスコープチェーンはscope1(関数スコープ)→グローバルスコープの順になる。
+スコープが定義された場所によって決まる性質を`レキシカルスコープ`という。
+*/
+
+
