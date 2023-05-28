@@ -299,3 +299,16 @@ let [max, min] = getMaxMin(10, 0, 28, 15, -28, 99);
 console.log(max, min); // 99 -28
 
 
+/* 再帰関数
+再帰関数(Recursive Function)とは、ある関数が自分自身を呼び出すこと、または、そのような関数自体のこと。
+*/
+// 例：階乗計算(階乗とは1~nの総積のこと)
+function factorial(n) {
+	if (n != 0) { return n * factorial(n - 1); }
+	return 1;
+}
+
+console.log(factorial(5)); // 120(5 * 4 * 3 * 2 * 1 * 1 = 120)
+// 再帰関数では再帰の終了点を忘れないことに注意が必要！(無限ループ注意)→自然数が0である場合にreturn 1 で終了させている
+
+
