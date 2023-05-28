@@ -312,3 +312,30 @@ console.log(factorial(5)); // 120(5 * 4 * 3 * 2 * 1 * 1 = 120)
 // 再帰関数では再帰の終了点を忘れないことに注意が必要！(無限ループ注意)→自然数が0である場合にreturn 1 で終了させている
 
 
+/* 高階関数
+高階関数とは関数を引数、戻り値として扱う関数のこと。→関数はあくまでデータ型の1つ(JavaScriptでは)
+*/
+// 例1：forEachメソッドのようなやつを関数で
+// 高階関数のarrayWalkを定義
+function arrayWalk(data, callback) {
+	for (let [key, value] of data.entries()) {
+		callback(value, key) // 引数callbackで指定された関数を呼び出す
+	}
+}
+
+// 配列を処理するためのユーザー定義関数
+function showElement(value, key) {
+	console.log(`${key}: ${value}`);
+}
+
+// 高階関数の引数にユーザー定義関数を
+let list = [1, 2, 4, 8, 16];
+arrayWalk(list, showElement);
+/* 結果
+0: 1
+1: 2
+2: 4
+3: 8
+4: 16
+*/
+
