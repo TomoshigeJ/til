@@ -260,3 +260,26 @@ console.log(Math.max(...[28, 0, 15, 1, 300])); // 300
 // Math.maxメソッドは可変長引数を受け取る。配列をそのまま渡すと展開することができずNaNになってしまう。
 
 
+// 名前付き引数
+function showD({
+	content = '',
+	title = 'My Dialog',
+	width = 100,
+	height = 100,
+	position = 'center',
+	modal = false
+}) {
+	console.log(`content: ${content}`);
+	console.log(`title: ${title}`);
+	console.log(`width: ${width}`);
+	console.log(`height: ${height}`);
+	console.log(`position: ${position}`);
+	console.log(`modal: ${modal}`);
+}
+
+showD({
+	content: 'こんてんと',
+	modal: true
+});
+
+
