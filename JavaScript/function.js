@@ -446,3 +446,27 @@ console.log(String.raw`C:\data\jsbook\chap06`);
 // →無視されるのは「\xx」の形のみ(${式展開}は認識される)
 
 
+/* スコープチェーン
+グローバルスコープはJavaScript実行時に常に生成されるスコープ。
+その他はブロックに準じてスコープが形成される。
+スコープチェーンとは、これらのスコープが階層順に連結されたリストのことをいう。
+スコープチェーンの先頭に位置するスコープから順に変数を検索し、マッチする変数がはじめて見つかったところでその値を採用している。
+*/
+let y = 'Global John';
+
+function outerFunc() {
+	let y = 'Local Outer John';
+
+	function innerFunc() {
+		let z = 'Local Inner John';
+		console.log(z); // Local Inner John
+		console.log(y); // Local Outer John
+		console.log(x); // Uncaught ReferenceError: x is not defined
+	}
+	innerFunc();
+}
+
+outerFunc();
+// この場合ではinnerFunc(最内側)のスコープからouterFuncのスコープ、グローバルスコープの順に指定された変数を検索している。
+
+
