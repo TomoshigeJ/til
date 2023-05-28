@@ -492,3 +492,26 @@ scope1関数がどこで呼び出されようと、形成されるスコープ�
 */
 
 
+/* その振る舞いオブジェクトの如し…クロージャ
+クロージャとは「ローカル変数を参照している関数内関数」のこと。*/
+function closure(init) {
+	let counter = init;
+
+	return function() {
+		return ++counter;
+	}
+}
+
+let myClosure = closure(1);
+console.log(myClosure()); // 2
+console.log(myClosure()); // 3
+console.log(myClosure()); // 4
+/*
+closure関数の戻り値は数値をインクリメントする為の匿名関数。
+closure関数から返された匿名関数がローカル変数のcounterを参照し続けている。
+その為、closure関数の終了後もローカル変数counterは破棄されずに保持され続ける。
+戻り値である匿名関数が表すローカルスコープ→closure関数が表すローカルスコープ→グローバルスコープ…というスコープチェーンが、匿名関数が有効である間は保持されている。
+クロージャとは一種の記憶域を提供するような仕組みのイメージ。
+*/
+
+
