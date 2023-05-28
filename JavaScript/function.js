@@ -240,3 +240,18 @@ console.log(getTriangleArea(4));       // 10
 console.log(getTriangleArea(100, 50)); // 2500
 
 
+// 可変長引数の関数
+function sum(...nums) {
+	let result = 0;
+	for (let num of nums) {
+		if (typeof num !== 'number') {
+			throw new Error(`指定値が数値ではありません：${nums}`);
+		}
+		result += num;
+	}
+	return result;
+}
+console.log(sum(1, 2, 3, 4, 5)); // 15
+console.log(sum(1, a, 3, 4, 5)); // エラー
+
+
