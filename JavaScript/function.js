@@ -210,3 +210,22 @@ function showValue(value) {
 showValue();                // undefined
 showValue('John');          // John
 showValue('John', 'John2'); // John
+/*
+showValueでは引数を1つ受け取るが引数を何個でも渡せる。
+→与える引数の数が関数側で要求する数と異なる場合もこれをチェックしない
+引数の数が多い場合も切り捨てられているわけではなく、`argumentsオブジェクト`に引数の値を保持する。
+*/
+// argumentsオブジェクトを利用し、引数チェックのようなことはできる
+function showValue(value) {
+	if (arguments.length !== 1) {
+		throw new Error(`引数の数が間違っています：${arguments.length}`);
+	}
+	console.log(value);
+}
+
+try {
+	showValue('John', 'John2');
+} catch(e) {
+	console.log(e.message);
+}
+// 引数の数が間違っています：2
