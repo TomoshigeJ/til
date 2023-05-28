@@ -514,4 +514,27 @@ closure関数から返された匿名関数がローカル変数のcounterを参
 クロージャとは一種の記憶域を提供するような仕組みのイメージ。
 */
 
+// 別の例
+// ここは同じ
+function closure(init) {
+	let counter = init;
 
+	return function() {
+		return ++counter;
+	}
+}
+
+// ここから違う
+let myClosure1 = closure(1);
+let myClosure2 = closure(100);
+
+console.log(myClosure1()); // 2
+console.log(myClosure2()); // 101
+console.log(myClosure1()); // 3
+console.log(myClosure2()); // 102
+/*
+それぞれに異なるスコープチェーンが生成されていることがわかる。
+→スコープチェーンに属するローカル変数counterも別もの
+クロージャはシンプルなオブジェクト？
+オブジェクトにおけるプロパティやメソッドのような関係に似ている。
+*/
