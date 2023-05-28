@@ -201,3 +201,12 @@ varで定義したスコープを必要最低限に留める方法。
 `.call(this);` はスコープの枠組みとして作った匿名関数を定義後すぐに実行している
 →ファイル全体を関数で括っているようなコードもある
 */
+
+
+// JavaScriptは引数の数をチェックしない
+function showValue(value) {
+	console.log(value);
+}
+showValue();                // undefined
+showValue('John');          // John
+showValue('John', 'John2'); // John
