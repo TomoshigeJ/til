@@ -382,3 +382,16 @@ arrayWalk(
 );
 
 
+// アロー関数の場合(例1を書き換える)
+// 高階関数のarrayWalkを定義(ここは同じ)
+function arrayWalk(data, callback) {
+	for (let [key, value] of data.entries()) {
+		callback(value, key) // 引数callbackで指定された関数を呼び出す
+	}
+}
+
+// アロー関数にて
+let list = [1, 2, 4, 8, 16];
+arrayWalk(list, (value, key) => console.log(`${key}: ${value}`));
+
+
