@@ -360,3 +360,25 @@ arrayWalk(list, sumElement);
 console.log(result); // 31
 
 
+/* 「使い捨ての関数」は匿名関数で
+例1、例2では高階関数に渡すことを目的とする為にユーザー定義関数を前もって定義して渡した。
+が、もしその場限りで使い捨ての場合に名前をつけることは無駄なので、匿名関数をそのまま渡してやればいい。無駄なコード、変数定義を減らすことができる。
+*/
+// 例1のやつを匿名関数で(結果は同じ)
+// 高階関数のarrayWalkを定義(ここは同じ)
+function arrayWalk(data, callback) {
+	for (let [key, value] of data.entries()) {
+		callback(value, key) // 引数callbackで指定された関数を呼び出す
+	}
+}
+
+// arrayWalk呼び出し時に直接匿名関数を渡す
+let list = [1, 2, 4, 8, 16];
+arrayWalk(
+	list,
+	function (value, key) {
+		console.log(`${key}: ${value}`);
+	}
+);
+
+
