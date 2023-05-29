@@ -13,13 +13,13 @@ slim → html のようにコンパイルされ、画面表示の際はHTMLの�
 `HTMLの場合`
  ```ruby
 <% @posts.each do |post| %>
-	<p><%= post.title %></p>
+  <p><%= post.title %></p>
 <% end %>
 ```
 `Slimの場合`
 ```ruby
 - @posts.each do |post|
-	p = post.title
+  p = post.title
 ```
 →まさにスリムなコード
 
@@ -42,27 +42,27 @@ p you like dog
 - Rubyコード
 ```ruby
 - @posts.each do |post|
-	p = post.title
+  p = post.title
 ↓
 <% @posts.each do |post| %>
-	<p><%= post.title %></p>
+  <p><%= post.title %></p>
 <% end %>
 ```
 
 - IDとclass
 ```ruby
 #dog
-	john
+  john
 ↓
 <div id="dog">john</div>
 
 .dog
-	john
+  john
 ↓
 <div class="dog">john</div>
 
 #dog.hoge.foo
-	john
+  john
 ↓
 <div id="dog" class="hoge foo">john</div>
 ```
@@ -78,4 +78,5 @@ p you like dog
 
 - 参考
 [slim(日本語ドキュメント)](https://github.com/slim-template/slim/blob/main/README.jp.md)
+
 [slimの書き方をマスターしよう！(pikawaka)](https://pikawaka.com/rails/slim)
