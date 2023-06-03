@@ -94,3 +94,41 @@ Objectオブジェクトとは、オブジェクトの基本的な性質や機�
 プロパティの詳細情報(読み取り専用か、列挙可能かなど)
 オブジェクトを生成する元となる機能(プロトタイプ)
 などの詳細な情報をcreateメソッドを利用して設定できる。
+Object.create(proto, props)
+	proto:プロトタイプ
+	props:プロパティの属性情報
+*/
+'use strict';
+
+let dog = Object.create(Object.prototype, {
+	name: {
+		value: 'じょん',
+		writable: true,
+		configurable: true,
+		enumerable: true
+	},
+	birth: {
+		value: new Date(2020, 12, 12),
+		writable: true,
+		configurable: true,
+		enumerable: true
+	},
+	memo: {
+		value: 'すごい犬です',
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+// プロパティ値への書き込み
+// dog.memo = 'もっとすごい犬になりました';
+
+// プロパティ値の列挙
+// for (let prop in dog) {
+//  console.log(`${prop}: ${dog[prop]}`);
+// }
+
+// プロパティの破棄
+// delete dog.memo;
+// →引数propsには属性名と値を付与する
