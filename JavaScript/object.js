@@ -49,3 +49,16 @@ console.log(dog);
 プロパティ名をブラケットでくくることで、式の値から動的にプロパティを生成できる。
 →これを算出プロパティ名という
 */
+let i = 1;
+let dog = {
+	name: '動的じょん',
+	age: 99,
+	[`memo${i}`]: '犬',
+	[`memo${++i}`]: 'Vim',
+	[`memo${++i}`]: '最強'
+};
+
+console.log(dog);
+// => {name: '動的じょん', age: 99, memo1: '犬', memo2: 'Vim', memo3: '最強'}
+
+
