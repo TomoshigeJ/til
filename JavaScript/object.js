@@ -62,3 +62,11 @@ console.log(dog);
 // => {name: '動的じょん', age: 99, memo1: '犬', memo2: 'Vim', memo3: '最強'}
 
 
+// 2：new 演算子(コンストラクター経由でのオブジェクトの生成)
+let list = new Array('松', '竹', '梅');
+let birth = new Date(2023, 5, 28);
+let data = new Map([
+	['1st', 'ファースト'],
+	['2nd', 'セカンド'],
+	['3rd', 'サード']
+]);
