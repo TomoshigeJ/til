@@ -37,3 +37,10 @@ let dog = {
 /* 変数を同名のプロパティに割り当てる
 プロパティ名と、その値を格納した変数名が同じ場合には値の指定を省略できる。
 */
+let name = '変数じょん';
+let birth = new Date(2010, 10, 10);
+let dog = { name, birth}
+
+console.log(dog);
+// => {name: 'じょん', birth: Wed Nov 10 2010 00:00:00 GMT+0900 (日本標準時)}
+// →{ name: name, birth: birth}みたいに記述しなくていい！
