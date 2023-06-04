@@ -154,3 +154,7 @@ JavaScriptのすべてのオブジェクトはその原型となるオブジェ�
 オブジェクトリテラルによって生成されたオブジェクトは、常にObject.prototypeオブジェクトをプロトタイプする。
 一方、Object.createメソッドでは引数protoで明示的にプロトタイプとするオブジェクトを指定する必要がある。
 */
+let dog = Object.create(Object.prototype, { ... });
+// Object.prototypeはObjectオブジェクトのプロトタイプを意味する。
+// →Array.prototypeとすればArrayオブジェクトのプロトタイプを参照するイメージ
+
