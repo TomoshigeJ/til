@@ -252,3 +252,49 @@ objがxの値を持つことにより、プロトタイプのxの値を参照す
 →これをobjのxプロパティがプロトタイプのxプロパティを隠蔽するという
 */
 
+// プロパティの設定(セッターを持つ場合)
+let parent = Object.create(Object.prototype, {
+	// セッター、ゲッターを伴うプロパティ
+	x: {
+		get() {
+			return this._x ?? 10;
+		},
+		set(value) {
+			console.log(`setter is called: ${value}`);
+			this._x = value;
+		},
+		configurable: true,
+		enumerable: true
+	},
+	y: {
+		value: 20,
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+let obj = Object.create(parent, {
+	z: {
+		value: 30,
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+obj.x = 100;
+
+console.log(obj);
+console.log(parent);
+/* 結果
+setter is called: 100
+{z: 30, _x: 100}
+{y: 20}
+*/
+/*
+セッターを伴うプロパティ(x)を更新する場合、そのままobjにxプロパティを追加するのでなく、まずプロトタイプのセッターが呼び出される。
+→セッターが操作する対象はプロトタイプではなく、あくまでobjに対して
+オブジェクト操作によって、プロトタイプが書き換えられることは`ない`
+*/
+
