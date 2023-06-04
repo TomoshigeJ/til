@@ -162,3 +162,4 @@ let dog = Object.create(Object.prototype, { ... });
 let dog = Object.create(null, { ... });
 // →これでdogオブジェクトがプロトタイプを持たない、プロトタイプチェーンの終点となる
 
+// プロトタイプチェーンの挙動を確認
