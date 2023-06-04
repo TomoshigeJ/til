@@ -192,3 +192,29 @@ for (let prop in obj) {
 プロトタイプが絡むと、プロパティの操作に伴う挙動が複雑になり、誤解を招きやすい…
 */
 
+// プロトタイプへの追加
+// objの元となるオブジェクト
+let parent = {
+	x: 10,
+	y: 20,
+};
+
+// parentをプロトタイプにして作成
+let obj = Object.create(parent, {
+	z: {
+		value: 30,
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+parent.v = 0;
+
+for (let prop in obj) {
+	console.log(`${prop}: ${obj[prop]}`);
+}
+// => z: 30 x: 10 y:20 v:0
+// 作成されたオブジェクトとプロトタイプの関係は複製ではなく、あくまで参照。
+// →なのでvをparentオブジェクトに後付けしてもobjから参照できる
+
