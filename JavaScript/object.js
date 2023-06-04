@@ -159,3 +159,6 @@ let dog = Object.create(Object.prototype, { ... });
 // →Array.prototypeとすればArrayオブジェクトのプロトタイプを参照するイメージ
 
 // Objectオブジェクトの機能すら引き継ぎたくないのであれば、引数protoをnullにする。
+let dog = Object.create(null, { ... });
+// →これでdogオブジェクトがプロトタイプを持たない、プロトタイプチェーンの終点となる
+
