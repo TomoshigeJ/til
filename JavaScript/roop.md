@@ -1,30 +1,28 @@
-// while
-/*
+- while
+```JavaScript
 while(条件式) {
 	条件式がtrueである時に実行される命令(群)
 }
-*/
 
 let i = 2;
 while(i < 10) {
 	console.log(`iの値は${i}`);
 	i++;
 }
+```
 
-
-// do...while
-/*
+- do...while
+```JavaScript
 do {
 	条件式がtrueである時に実行される命令(群)
 } while(条件式);
-*/
 
 let i = 2;
 do {
 	console.log(`iの値は${i}`);
 	i++;
 } while(i < 10);
-
+```
 
 // for
 /*
