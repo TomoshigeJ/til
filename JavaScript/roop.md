@@ -24,24 +24,22 @@ do {
 } while(i < 10);
 ```
 
-// for
-/*
+- for
+```JavaScript
 for(初期化式; ループ継続条件式; 増減式) {
 	ループ内で実行する命令(群)
 }
-*/
 
 for (let i = 2; i < 10; i++) {
 	console.log(`iの値は${i}`);
 }
+```
 
-
-// for...in
-/*
+- for...in
+```JavaScript
 for (仮変数 in 連想配列) {
 	ループ内で実行する処理(群)
 }
-*/
 
 let data = {
 	name : 'じょん',
@@ -52,33 +50,30 @@ let data = {
 for (let key in data) {
 	console.log(`${key} = ${data[key]}`);
 }
-
 /* 結果
 name = じょん
 age = 10
 type = dog
 */
+```
 
-
-// for...of
-/*
+- for...of
+```JavaScript
 for (仮変数 of 反復可能なオブジェクト) {
 	ループ内で実行する命令(群)
 }
-*/
 
 let data = ['dog', 'rabbit', 'bear'];
 
 for (let value of data) {
 	console.log(value);
 }
-
 /* 結果
 dog
 rabbit
 bear
 */
-
+```
 
 // forEach
 /* 
