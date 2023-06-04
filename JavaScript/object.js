@@ -158,3 +158,4 @@ let dog = Object.create(Object.prototype, { ... });
 // Object.prototypeはObjectオブジェクトのプロトタイプを意味する。
 // →Array.prototypeとすればArrayオブジェクトのプロトタイプを参照するイメージ
 
+// Objectオブジェクトの機能すら引き継ぎたくないのであれば、引数protoをnullにする。
