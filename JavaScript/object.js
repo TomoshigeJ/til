@@ -298,3 +298,29 @@ setter is called: 100
 オブジェクト操作によって、プロトタイプが書き換えられることは`ない`
 */
 
+// プロパティの削除
+// objの元となるオブジェクト
+let parent = {
+	x: 10,
+	y: 20,
+};
+
+// parentをプロトタイプにして作成
+let obj = Object.create(parent, {
+	z: {
+		value: 30,
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+obj.x = 101;
+console.log(obj.x);         // 101
+console.log(parent.x);      // 10
+
+console.log(delete obj.x);  // true
+console.log(obj.x);         // 10
+console.log(parent.x);      // 10
+// あくまでparentのxプロパティは変更されない
+
