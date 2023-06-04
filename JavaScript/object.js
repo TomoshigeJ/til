@@ -163,3 +163,28 @@ let dog = Object.create(null, { ... });
 // →これでdogオブジェクトがプロトタイプを持たない、プロトタイプチェーンの終点となる
 
 // プロトタイプチェーンの挙動を確認
+// objの元となるオブジェクト
+let parent = {
+	x: 10,
+	y: 20,
+};
+
+// parentをプロトタイプにして作成
+let obj = Object.create(parent, {
+	z: {
+		value: 30,
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+console.log(obj);                        // {z: 30}
+console.log(Object.getPrototypeOf(obj)); // {x: 10, y: 20}
+
+for (let prop in obj) {
+	console.log(`${prop}: ${obj[prop]}`);
+}
+// => z: 30 x: 10 y:20
+// Object.getPrototypeOfメソッドでプロトタイプに直接アクセスもできる
+
