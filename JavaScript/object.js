@@ -218,3 +218,37 @@ for (let prop in obj) {
 // 作成されたオブジェクトとプロトタイプの関係は複製ではなく、あくまで参照。
 // →なのでvをparentオブジェクトに後付けしてもobjから参照できる
 
+// プロパティ値の設定
+// objの元となるオブジェクト
+let parent = {
+	x: 10,
+	y: 20,
+};
+
+// parentをプロトタイプにして作成
+let obj = Object.create(parent, {
+	z: {
+		value: 30,
+		writable: true,
+		configurable: true,
+		enumerable: true
+	}
+});
+
+console.log(obj);    // {z: 30}
+console.log(parent); // {x: 10, y: 20}
+console.log('----------------------');
+
+obj.x = 100;
+
+console.log(obj);    // {z: 30, x: 100}
+console.log(parent); // {x: 10, y: 20}
+console.log('----------------------');
+/*
+obj.xの値を更新後もobj.xの値は変わっていない
+→プロトタイプは読み取り専用
+→値が設定されるのは、常に本来のオブジェクトに対して
+objがxの値を持つことにより、プロトタイプのxの値を参照する必要がなくなった。が、あくまでプロトタイプのxの値が更新されたり、消えたわけではない。
+→これをobjのxプロパティがプロトタイプのxプロパティを隠蔽するという
+*/
+
