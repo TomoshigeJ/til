@@ -1,5 +1,5 @@
-// 優先順位の高い順
-/*
+- 優先順位の高い順
+```
 かっこ：()
 配列：[]
 new
@@ -21,36 +21,38 @@ Null 合体(??)
 代入(=), 複合代入(+=系)
 yield
 カンマ(,)
-*/
+```
 
-// 左から右に処理していくパターン
-/*
+- 左から右に処理していくパターン
+```
 算術演算子：+, -, *, /, %
 比較演算子：< <=, ==, !=, など
 論理演算子：&&, ||
 ビット演算子：<<, >>, <<<, &, |, ^
 Null 合体：??
 その他：. , [] () instanseof, in
-*/
+```
 
-// 右から左に処理していくパターン
-/*
+- 右から左に処理していくパターン
+```
 算術演算子：++, --, **
 代入演算子：=, +=, -=, など
 論理演算子：!
 ビット演算子：~
 条件演算子：?:
 その他：-(符号反転), +(無演算), await, delete, typeof, void, yield, new
-*/
+```
 
-
-// delete 演算子
+- delete 演算子
+```JavaScript
 let data = ['dog', 'rabbit', 'bear'];
 console.log(delete data[0]); // true
 console.log(data);           // [empty, 'rabbit', 'bear']
 console.log(data.length);    // 3
+```
 
-// プロパティの要素削除
+- プロパティの要素削除
+```JavaScript
 let frameworks = { ruby: 'rails', javascritp: 'Next.js' };
 console.log(delete frameworks.ruby); // true
 console.log(frameworks);             // {javascritp: 'Next.js'}
@@ -60,13 +62,16 @@ let member = { name: 'John', type: 'dog', master: frameworks };
 console.log(delete member.master);   // true
 console.log(member);                 // {name: 'John', type: 'dog'}
 console.log(frameworks);             // {javascritp: 'Next.js'}
+```
 
-// 変数は削除できない
+- 変数は削除できない
+```JavaScript
 let animal = 'dog';
 console.log(delete animal); // false
+```
 
-
-// typeof 演算子
+- typeof 演算子
+```JavaScript
 let number = 1;
 console.log(typeof number); // number
 
@@ -81,10 +86,11 @@ console.log(typeof ary);    // object
 
 let obj = { name: 'じょん', age: 28 };
 console.log(typeof obj);    // object
+```
 
-// 型の変換
+- 型の変換
+```JavaScript
 console.log(Boolean('じょん')); // true
 console.log(String('じょん'));  // じょん
 console.log(Number('じょん'));  // NaN
-
-
+```
