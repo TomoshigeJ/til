@@ -10,7 +10,7 @@ number ||= 0
 ```
 numberがあればnumberを返す。
 
-numberがnilかfalseの場合、10を代入してnumberを返す。
+numberがnilかfalseの場合、0を代入してnumberを返す。
 
 →nilやfalseによる予期せぬエラーを防ぐことができる。
 
