@@ -401,3 +401,81 @@ console.log(parent.x);      // 10
 
 ---
 
+# Objectオブジェクト(雛形)
+
+Objectオブジェクトはすべてのオブジェクトの大元となるオブジェクト。
+
+他のオブジェクトに対して「オブジェクトの共通的な性質や機能を提供する」
+
+さらに、「オブジェクトを操作すための汎用的な機能(静的メソッド)を提供する」
+
+---
+
+- オブジェクトをマージする
+
+`assignメソッド`で既存のオブジェクトを結合(マージ)することができる。
+```JavaScript
+Object.assign(target, source, ...)
+  target: ターゲット
+  source: コピー元(可変長引数)
+```
+引数`source, … `で指定されたオブジェクトのメンバーを引数`target`にコピーする。
+```JavaScript
+let pet = {
+  type: 'dog',
+  name: 'john',
+  description: {
+    birth: '1192-2-8'
+  },
+};
+
+let pet2 = {
+  name: 'mocomoca',
+  color: 'white',
+};
+
+let pet3 = {
+  cute: 99,
+  description: {
+    birth: '2010-2-8'
+  },
+};
+
+Object.assign(pet, pet2, pet3);
+console.log(pet);
+
+// {type: 'dog', name: 'mocomoca', description: {…}, color: 'white', cute: 99}
+```
+→同名のプロパティはあとのもので上書き
+
+→再起的なマージは非対応(今回だとdescriptionプロパティは丸ごと上書き)
+
+→引数target(今回はpet)が書き換えられている点に注意
+
+`スプレッド構文で書いて見る`
+```JavaScript
+let merged = { ...pet, ...pet2, ...pet3 }
+```
+
+---
+
+- オブジェクトを複製する
+
+assignメソッド、スプレッド構文を用いることでオブジェクトを複製することもできる。
+```JavaScript
+let pet = {
+  name: 'じょん',
+  description: {
+    birth: '2023-02-08'
+  },
+};
+
+let copied = Object.assign({}, pet);
+
+console.log(pet);
+console.log(copied);
+// => それぞれ同じ結果
+
+console.log(pet === copied);
+// => false
+```
