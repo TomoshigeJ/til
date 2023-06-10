@@ -9,12 +9,12 @@ let x = 1;
 let y = 0;
 
 try {
-	if (y === 0) {
-		throw new Error('0で割る');
-	}
-	let z = x / y;
+  if (y === 0) {
+    throw new Error('0で割る');
+  }
+  let z = x / y;
 } catch(e) {
-	console.log(e.message);
+  console.log(e.message);
 }
 ```
 
@@ -23,11 +23,11 @@ try {
 - try...catch...finally 構文
 ```JavaScript
 try {
-	例外が発生するかもしれない命令(群)
+  例外が発生するかもしれない命令(群)
 } catch(例外情報を受け取る変数) {
-	例外が発生した時に実行される命令(群)
+  例外が発生した時に実行される命令(群)
 } finally {
-	例外の有無にかかわらず、最終的に実行される命令(群)
+  例外の有無にかかわらず、最終的に実行される命令(群)
 }
 ```
 
@@ -35,11 +35,11 @@ try {
 ```JavaScript
 let i = 1;
 try{
-	i = i * j; // 例外発生
+  i = i * j; // 例外発生
 } catch(e) {
-	console.log(`${e.name}: ${e.message}`);
+  console.log(`${e.name}: ${e.message}`);
 } finally {
-	console.log('処理は完了しました');
+  console.log('処理は完了しました');
 }
 
 /* 結果
@@ -54,8 +54,8 @@ const PATH = '/test/dog.dat';
 
 openFile(PATH);
 try {
-	writeFile(PATH);
+  writeFile(PATH);
 } finally {
-	closeFile(PATH);
+  closeFile(PATH);
 }
 ```
