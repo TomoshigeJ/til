@@ -41,9 +41,9 @@ function命令以外にも以下の方法でも関数を定義できる。
 ①Functionコンストラクター経由の定義
 ```JavaScript
 let getTriangleArea = new Function(
-	'base',                     // 引数
-	'height',                   // 引数
-	'return base * height / 2;' // 関数の本体(処理)
+  'base',                     // 引数
+  'height',                   // 引数
+  'return base * height / 2;' // 関数の本体(処理)
 );
 console.log(getTriangleArea(10, 4));
 // 特別な理由がなければ基本的に使用しない。
@@ -53,7 +53,7 @@ console.log(getTriangleArea(10, 4));
 - ②関数リテラルで定義する(関数式とも言う)
 ```JavaScript
 let getTriangleArea = function(base, height) {
-	return base * height / 2;
+  return base * height / 2;
 };
 console.log(getTriangleArea(10, 4));
 // 関数リテラルでは名前を持たない関数を定義したうえで、変数getTriangleAreaに格納→匿名関数、無名関数とも呼ばれる
@@ -62,7 +62,7 @@ console.log(getTriangleArea(10, 4));
 - ③アロー関数で定義する
 ```JavaScript
 let getTriangleArea = (base, height) => {
-	return base * height / 2;
+  return base * height / 2;
 };
 console.log(getTriangleArea(10, 4));
 // functionキーワードを用いず、 =>(アロー)を用いる
@@ -95,7 +95,7 @@ console.log(getTriangleArea(10, 4));
 ①JavaScriptにおいて関数はデータ型の一種
 ```JavaScript
 function getTriangleArea(base, height) {
-	return base * height / 2;
+  return base * height / 2;
 }
 
 console.log(getTriangleArea(10, 4));
@@ -107,12 +107,12 @@ console.log(getTriangleArea);
 ②関数の丸かっこ()は「関数を実行する」という意味を持つ
 ```JavaScript
 function getTriangleArea(base, height) {
-	return base * height / 2;
+  return base * height / 2;
 }
 console.log(getTriangleArea); // ()を省略して関数呼び出し
 /* 結果
 ƒ getTriangleArea(base, height) {
-	return base * height / 2;
+  return base * height / 2;
 }
 */
 // ()を省略するとgetTriangleAreaに格納された関数定義がそのまま文字列として呼び出されている
@@ -123,7 +123,7 @@ console.log(getTriangleArea); // ()を省略して関数呼び出し
 console.log(getTriangleArea(10, 4));
 
 function getTriangleArea(base, height) {
-	return base * height / 2;
+  return base * height / 2;
 }
 // 関数定義より上で関数を呼び出しているがエラーにはならない。
 // function命令で宣言された関数がスコープの先頭に巻き上げられる(hoist)から。
@@ -152,8 +152,8 @@ function命令以外の関数定義方法では実行(代入)時に評価され�
 - ローカル変数範囲確認
 ```JavaScript
 function checkScope() {
-	let scope = 'blockScope'
-	return scope;
+  let scope = 'blockScope'
+  return scope;
 }
 console.log(checkScope()); // blockScope
 console.log(scope);        // エラー表示
@@ -167,7 +167,7 @@ console.log(scope);        // エラー表示
 ```JavaScript
 let scope = 'globalScope';
 function checkScope() {
-	return scope;
+  return scope;
 }
 console.log(checkScope()); // globalScope
 console.log(scope);        // globalScope
@@ -189,8 +189,8 @@ console.log(scope);        // globalScope
 ```JavaScript
 let scope = 'globalScope';
 function getValue() {
-	let scope = 'blockScope';
-	return scope;
+  let scope = 'blockScope';
+  return scope;
 }
 console.log(getValue()); // blockScope
 console.log(scope);      // globalScope
@@ -203,8 +203,8 @@ console.log(scope);      // globalScope
 ```JavaScript
 let value = 10;
 function decrement(value) {
-	value--;
-	return value;
+  value--;
+  return value;
 }
 console.log(decrement(value)); // 9
 console.log(value);            // 10
@@ -217,8 +217,8 @@ console.log(value);            // 10
 ```JavaScript
 let value = [1, 2, 4, 8, 16];
 function updateArray(value) {
-	value.pop();
-	return value;
+  value.pop();
+  return value;
 }
 console.log(updateArray(value)); // [1, 2, 4, 8]
 console.log(value);              // [1, 2, 4, 8]
@@ -231,8 +231,8 @@ console.log(value);              // [1, 2, 4, 8]
 ```JavaScript
 let value = [1, 2, 4, 8, 16];
 function updateArray(value) {
-	value = []
-	return value;
+  value = []
+  return value;
 }
 console.log(updateArray(value)); // []
 console.log(value);              // [1, 2, 4, 8, 16]
@@ -244,7 +244,7 @@ console.log(value);              // [1, 2, 4, 8, 16]
 - var 命令のスコープ
 ```JavaScript
 {
-	var scope = 'john';
+  var scope = 'john';
 }
 console.log(scope);
 // varはブロックスコープを持たないのでエラーにならない。→関数ブロックでのみスコープを持つ
@@ -255,8 +255,8 @@ console.log(scope);
 - 即時関数
 ```JavaScript
 (function() {
-	var scope = 'john';
-	console.log(scope); // john
+  var scope = 'john';
+  console.log(scope); // john
 }).call(this);
 
 console.log(scope);   // エラー表示
@@ -272,7 +272,7 @@ varで定義したスコープを必要最低限に留める方法。
 - JavaScriptは引数の数をチェックしない
 ```JavaScript
 function showValue(value) {
-	console.log(value);
+  console.log(value);
 }
 showValue();                // undefined
 showValue('John');          // John
@@ -289,16 +289,16 @@ showValueでは引数を1つ受け取るが引数を何個でも渡せる。
 - argumentsオブジェクトを利用し、引数チェックのようなことはできる
 ```JavaScript
 function showValue(value) {
-	if (arguments.length !== 1) {
-		throw new Error(`引数の数が間違っています：${arguments.length}`);
-	}
-	console.log(value);
+  if (arguments.length !== 1) {
+    throw new Error(`引数の数が間違っています：${arguments.length}`);
+  }
+  console.log(value);
 }
 
 try {
-	showValue('John', 'John2');
+  showValue('John', 'John2');
 } catch(e) {
-	console.log(e.message);
+  console.log(e.message);
 }
 // 引数の数が間違っています：2
 ```
@@ -308,7 +308,7 @@ try {
 - 引数の規定値を設定する
 ```JavaScript
 function getTriangleArea(base = 10, height = 5) {
-	return base * height / 2;
+  return base * height / 2;
 }
 console.log(getTriangleArea());        // 25
 console.log(getTriangleArea(4));       // 10
@@ -320,14 +320,14 @@ console.log(getTriangleArea(100, 50)); // 2500
 - 可変長引数の関数
 ```JavaScript
 function sum(...nums) {
-	let result = 0;
-	for (let num of nums) {
-		if (typeof num !== 'number') {
-			throw new Error(`指定値が数値ではありません：${nums}`);
-		}
-		result += num;
-	}
-	return result;
+  let result = 0;
+  for (let num of nums) {
+    if (typeof num !== 'number') {
+      throw new Error(`指定値が数値ではありません：${nums}`);
+    }
+    result += num;
+  }
+  return result;
 }
 console.log(sum(1, 2, 3, 4, 5)); // 15
 console.log(sum(1, a, 3, 4, 5)); // エラー
@@ -346,24 +346,24 @@ Math.maxメソッドは可変長引数を受け取る。配列をそのまま渡
 - 名前付き引数
 ```JavaScript
 function showD({
-	content = '',
-	title = 'My Dialog',
-	width = 100,
-	height = 100,
-	position = 'center',
-	modal = false
+  content = '',
+  title = 'My Dialog',
+  width = 100,
+  height = 100,
+  position = 'center',
+  modal = false
 }) {
-	console.log(`content: ${content}`);
-	console.log(`title: ${title}`);
-	console.log(`width: ${width}`);
-	console.log(`height: ${height}`);
-	console.log(`position: ${position}`);
-	console.log(`modal: ${modal}`);
+  console.log(`content: ${content}`);
+  console.log(`title: ${title}`);
+  console.log(`width: ${width}`);
+  console.log(`height: ${height}`);
+  console.log(`position: ${position}`);
+  console.log(`modal: ${modal}`);
 }
 
 showD({
-	content: 'こんてんと',
-	modal: true
+  content: 'こんてんと',
+  modal: true
 });
 ```
 →{プロパティ名 = 規定値 , …}の形
@@ -377,7 +377,7 @@ return命令ではreturn x, y のように複数の値を返すことはでき�
 この場合は一旦戻り値を配列やオブジェクトとして束ねる必要がある。
 ```JavaScript
 function getMaxMin(...nums) {
-	return [Math.max(...nums), Math.min(...nums)]
+  return [Math.max(...nums), Math.min(...nums)]
 }
 
 let result = getMaxMin(10, 0, 28, 15, -28, 99);
@@ -395,8 +395,8 @@ console.log(max, min); // 99 -28
 例：階乗計算(階乗とは1~nの総積のこと)
 ```JavaScript
 function factorial(n) {
-	if (n != 0) { return n * factorial(n - 1); }
-	return 1;
+  if (n != 0) { return n * factorial(n - 1); }
+  return 1;
 }
 
 console.log(factorial(5)); // 120(5 * 4 * 3 * 2 * 1 * 1 = 120)
@@ -413,14 +413,14 @@ console.log(factorial(5)); // 120(5 * 4 * 3 * 2 * 1 * 1 = 120)
 ```JavaScript
 // 高階関数のarrayWalkを定義
 function arrayWalk(data, callback) {
-	for (let [key, value] of data.entries()) {
-		callback(value, key) // 引数callbackで指定された関数を呼び出す
-	}
+  for (let [key, value] of data.entries()) {
+    callback(value, key) // 引数callbackで指定された関数を呼び出す
+  }
 }
 
 // 配列を処理するためのユーザー定義関数
 function showElement(value, key) {
-	console.log(`${key}: ${value}`);
+  console.log(`${key}: ${value}`);
 }
 
 // 高階関数の引数にユーザー定義関数を
@@ -439,15 +439,15 @@ arrayWalk(list, showElement);
 ```JavaScript
 // 高階関数のarrayWalkを定義(ここは同じ)
 function arrayWalk(data, callback) {
-	for (let [key, value] of data.entries()) {
-		callback(value, key) // 引数callbackで指定された関数を呼び出す
-	}
+  for (let [key, value] of data.entries()) {
+    callback(value, key) // 引数callbackで指定された関数を呼び出す
+  }
 }
 
 // 違うユーザー定義関数
 let result = 0;
 function sumElement(value, key) {
-	result += value;
+  result += value;
 }
 
 // 使ってみる
@@ -469,18 +469,18 @@ console.log(result); // 31
 ```JavaScript
 // 高階関数のarrayWalkを定義(ここは同じ)
 function arrayWalk(data, callback) {
-	for (let [key, value] of data.entries()) {
-		callback(value, key) // 引数callbackで指定された関数を呼び出す
-	}
+  for (let [key, value] of data.entries()) {
+    callback(value, key) // 引数callbackで指定された関数を呼び出す
+  }
 }
 
 // arrayWalk呼び出し時に直接匿名関数を渡す
 let list = [1, 2, 4, 8, 16];
 arrayWalk(
-	list,
-	function (value, key) {
-		console.log(`${key}: ${value}`);
-	}
+  list,
+  function (value, key) {
+    console.log(`${key}: ${value}`);
+  }
 );
 ```
 
@@ -490,9 +490,9 @@ arrayWalk(
 ```JavaScript
 // 高階関数のarrayWalkを定義(ここは同じ)
 function arrayWalk(data, callback) {
-	for (let [key, value] of data.entries()) {
-		callback(value, key) // 引数callbackで指定された関数を呼び出す
-	}
+  for (let [key, value] of data.entries()) {
+    callback(value, key) // 引数callbackで指定された関数を呼び出す
+  }
 }
 
 // アロー関数にて
@@ -509,22 +509,22 @@ arrayWalk(list, (value, key) => console.log(`${key}: ${value}`));
 与えられた文字列をエスケープ処理
 ```JavaScript
 function escapeHtml(str) {
-	if (!str) { return ''; }
-	str = str.replaceAll(/&/g, '&amp;');
-	str = str.replaceAll(/</g, '&lt;');
-	str = str.replaceAll(/>/g, '&gt;');
-	str = str.replaceAll(/"/g, '&quot;');
-	str = str.replaceAll(/'/g, '&#39;');
-	return str;
+  if (!str) { return ''; }
+    str = str.replaceAll(/&/g, '&amp;');
+    str = str.replaceAll(/</g, '&lt;');
+    str = str.replaceAll(/>/g, '&gt;');
+    str = str.replaceAll(/"/g, '&quot;');
+    str = str.replaceAll(/'/g, '&#39;');
+  return str;
 }
 
 // 分解されたtemplatesとvaluesを順に連結(valuesはescapeHtml関数でエスケープ)
 function e(templates, ...values) {
-	let result = '';
-	for (let [i, temp] of templates.entries()) {
-		result += temp + escapeHtml(values[i]);
-	}
-	return result;
+  let result = '';
+  for (let [i, temp] of templates.entries()) {
+    result += temp + escapeHtml(values[i]);
+  }
+  return result;
 }
 
 // テンプレート文字列をエスケープ処理
@@ -580,15 +580,15 @@ console.log(String.raw`C:\data\jsbook\chap06`);
 let y = 'Global John';
 
 function outerFunc() {
-	let y = 'Local Outer John';
+  let y = 'Local Outer John';
 
-	function innerFunc() {
-		let z = 'Local Inner John';
-		console.log(z); // Local Inner John
-		console.log(y); // Local Outer John
-		console.log(x); // Uncaught ReferenceError: x is not defined
-	}
-	innerFunc();
+  function innerFunc() {
+    let z = 'Local Inner John';
+    console.log(z); // Local Inner John
+    console.log(y); // Local Outer John
+    console.log(x); // Uncaught ReferenceError: x is not defined
+  }
+  innerFunc();
 }
 
 outerFunc();
@@ -602,12 +602,12 @@ outerFunc();
 let scope = 'Global John';
 
 function scope1() {
-	console.log(scope);
+  console.log(scope);
 }
 
 function scope2() {
-	let scope = 'Local Scope2 John';
-	scope1();
+  let scope = 'Local Scope2 John';
+  scope1();
 }
 
 scope1(); // Global John
@@ -628,11 +628,11 @@ scope1関数がどこで呼び出されようと、形成されるスコープ�
 クロージャとは「ローカル変数を参照している関数内関数」のこと。
 ```JavaScript
 function closure(init) {
-	let counter = init;
+  let counter = init;
 
-	return function() {
-		return ++counter;
-	}
+  return function() {
+    return ++counter;
+  }
 }
 
 let myClosure = closure(1);
@@ -654,11 +654,11 @@ closure関数から返された匿名関数がローカル変数のcounterを参
 ```JavaScript
 // ここは同じ
 function closure(init) {
-	let counter = init;
+  let counter = init;
 
-	return function() {
-		return ++counter;
-	}
+  return function() {
+    return ++counter;
+  }
 }
 
 // ここから違う
