@@ -86,9 +86,9 @@ console.log(array); // ['a']
 - 配列から特定範囲の要素を取得する
 ```JavaScript
 array.slice([start [, end]])
-	array:元の配列
-	start:開始位置
-	end  :終了位置
+  array:元の配列
+  start:開始位置
+  end  :終了位置
 ```
 ```JavaScript
 let array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', ];
@@ -111,7 +111,7 @@ console.log(array.lastIndexOf(20, 2)); // 1(インデックス2から前に検�
 let keywd = 20;
 let result = [];
 array.forEach(function(v, i) {
-	if (v === keywd) { result.push(i); }
+  if (v === keywd) { result.push(i); }
 });
 console.log(result); // [1, 3]
 // →要素が存在するかどうかだけを確認する時はincludes メソッドを使用する
@@ -168,7 +168,7 @@ console.log(nums.sort()); // [100, 28, 5]
 // sortメソッドの引数にコールバック関数を指定し、並び替えルールそのものを変更する
 let nums = [5, 28, 100];
 console.log(nums.sort(function(m, n){
-	return m - n;
+  return m - n;
 })); // [5, 28, 100]
 /*
 引数のmとnは比較する要素。
