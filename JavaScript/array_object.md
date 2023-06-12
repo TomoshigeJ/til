@@ -135,7 +135,7 @@ let array = ['j', 'o', 'h', 'n'];
 console.log(array.join());     // j,o,h,n
 console.log(array.join(''));   // john
 console.log(array.join('/'));  // j/o/h/n
-console.log(array.join('\t')); // j	o	h	n
+console.log(array.join('\t')); // j o h n
 ```
 
 ---
