@@ -43,7 +43,8 @@ read ANSWER
 
 case $ANSWER in
   [y] )
-    echo 'Yes'
+    echo '処理を開始します。'
+    echo -----------------------------------------------------------------
     gitCommitAndPush
     ;;
   * )
