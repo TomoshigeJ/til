@@ -1,0 +1,16 @@
+<form>
+  <div>
+    <label for="name">氏名：</label>
+    <input id="name" type="text" name="name" value="じょん" />
+  </div>
+  <input id="btn" type="button" value="おくる">
+</form>
+
+<script>
+  let member = document.querySelector('#name');
+
+  document.querySelector('#btn').addEventListener('click', function() {
+	  console.log(member.value);
+	  console.log(member.getAttribute('value'));
+  }, false);
+</script>
