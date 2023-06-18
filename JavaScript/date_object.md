@@ -115,15 +115,15 @@ console.log(d.toJSON());             // 2023-06-22T10:50:20.125Z
 ```JavaScript
 let d = new Date(2023, 5, 22, 20, 00, 125);
 let fmt = new Intl.DateTimeFormat('ja-JP', {
-	year: 'numeric',
-	month: 'short',
-	day: '2-digit',
-	weekday: 'long',
-	hour12: true,
-	hour: '2-digit',
-	minute: '2-digit',
-	second: '2-digit',
-	dayPeriod: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+  weekday: 'long',
+  hour12: true,
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  dayPeriod: 'short',
 });
 console.log(fmt.format(d)); // 2023年6月22日木曜日 夜08:02:05
 ```
