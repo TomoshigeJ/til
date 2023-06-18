@@ -1,0 +1,13 @@
+<div id="elem">マウスポインターを乗せる</div>
+
+<script>
+  let elem = document.querySelector('#elem');
+
+  elem.addEventListener(`mouseenter`, function() {
+    this.style.backgroundColor = 'Yellow';
+  }, false);
+
+  elem.addEventListener('mouseleave', function() {
+    this.style.backgroundColor = '';
+  }, false);
+</script>
