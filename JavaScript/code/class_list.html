@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="./class_list.css" />
+<div id="elem">マウスポインターを乗せる(その2)</div>
+
+<script>
+  let elem = document.querySelector('#elem');
+
+  elem.addEventListener('mouseenter', function() {
+    this.classList.add('highlight');
+  }, false);
+
+  elem.addEventListener('mouseleave', function() {
+    this.classList.remove('highlight');
+  }, false);
+</script>
