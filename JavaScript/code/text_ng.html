@@ -1,0 +1,16 @@
+<form>
+  <label for="name">名前：</label>
+  <input id="name" name="name" type="text" size="30" />
+  <input id="btn" type="button" value="そうしん" />
+</form>
+<div id="result"></div>
+
+<script>
+  let name = document.querySelector('#name');
+  let result = document.querySelector('#result');
+
+  // ボタンクリック時にあいさつメッセージを反映
+  document.querySelector('#btn').addEventListener('click', function() {
+    result.innerHTML = `こんにちは！ ${name.value}さん!`
+  });
+</script>
