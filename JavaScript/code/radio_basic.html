@@ -1,0 +1,32 @@
+<form>
+  <div>
+    好きな動物は？
+    <label><input type="radio" name="animal" value="いぬ" />いぬ</label>
+    <label><input type="radio" name="animal" value="うさぎ" />うさぎ</label>
+    <label><input type="radio" name="animal" value="くま" />くま</label>
+    <input id="btn" type="button" value="そうしん" />
+  </div>
+</form>
+
+<script>
+  function getRadioValue(name) {
+    let result = '';
+    let elems = document.querySelectorAll(`input[name="${name}"]`);
+
+    // ラジオボタン走査、チェック状態確認
+    for(let elem of elems) {
+      // チェックされている場合、配列に追加
+      if (elem.checked) {
+        result = elem.value;
+        break;
+      }
+    }
+    return result;
+  }
+
+  // ボタンクリック時に選択項目の値をダイアログ表示
+  document.querySelector('#btn').addEventListener('click', function() {
+    console.log(getRadioValue('animal'))
+  }, false);  
+  
+</script>
