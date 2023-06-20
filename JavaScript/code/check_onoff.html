@@ -1,0 +1,18 @@
+<form>
+  <div>
+    DOGメルマガ: <br />
+    <label><input id="onoff" type="checkbox" name="mail" value="メルマガ希望">受け取る</label>
+    <input id="btn" type="button" value="送信" />
+  </div>
+</form>
+
+<script>
+  let onoff = document.querySelector('#onoff');
+  document.querySelector('#btn').addEventListener('click', function() {
+    if(onoff.checked) {
+      console.log(onoff.value);
+    } else {
+      console.log('No checked');
+    }
+  }, false);
+</script>
