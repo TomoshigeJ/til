@@ -1,0 +1,21 @@
+<form>
+  <div>
+    <label for="food">好きな動物は？</label>
+    <select id="animal">
+      <option value="いぬ">いぬ</option>
+      <option value="うさぎ">うさぎ</option>
+      <option value="くま">くま</option>
+    </select>
+    <input id="btn" type="button" value="そうしん"
+  </div>
+</form>
+
+<script>
+  let animal = document.querySelector('#animal');
+  let btn = document.querySelector('#btn');
+
+  btn.addEventListener('click', function() {
+    alert(animal.value);
+    console.log(animal.value);
+  }, false);
+</script>
