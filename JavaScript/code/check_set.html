@@ -1,0 +1,24 @@
+<form>
+  <div>
+    好きな動物は？
+    <label><input type="checkbox" name="animal" value="いぬ" />いぬ</label>
+    <label><input type="checkbox" name="animal" value="うさぎ" />うさぎ</label>
+    <label><input type="checkbox" name="animal" value="くま" />くま</label>
+    <input id="btn" type="button" value="そうしん" />
+  </div>
+  <input id="c_btn" type="button" value="変更！" />
+</form>
+
+<script>
+  function setCheckValue(name, values) {
+    let elems = document.querySelectorAll(`input[name="${name}"]`);
+
+    for(let elem of elems) {
+      elem.checked = values.includes(elem.value);
+    }
+  }
+
+  document.querySelector('#c_btn').addEventListener('click', function() {
+    setCheckValue('animal', ['うさぎ', 'くま'])
+  }, false);
+</script>
