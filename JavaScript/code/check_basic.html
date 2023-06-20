@@ -1,0 +1,28 @@
+<form>
+  <div>
+    好きな動物は？
+    <label><input type="checkbox" name="animal" value="いぬ" />いぬ</label>
+    <label><input type="checkbox" name="animal" value="うさぎ" />うさぎ</label>
+    <label><input type="checkbox" name="animal" value="くま" />くま</label>
+    <input id="btn" type="button" value="そうしん"
+  </div>
+</form>
+
+<script>
+  let btn = document.querySelector('#btn');
+
+  btn.addEventListener('click', function() {
+    // 選択値を格納するための配列
+    let result = [];
+    let animals = document.querySelectorAll('input[name="animal"]');
+
+    // チェックボックスを走査し、チェック状態にあるか確認
+    for (let animal of animals) {
+      // チェックされている項目の値を配列に追加
+      if(animal.checked) { result.push(animal.value); }
+    }
+
+    alert(result);
+    console.log(result);
+  }, false);
+</script>
