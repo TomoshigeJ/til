@@ -1,0 +1,24 @@
+<form>
+  <div>
+    好きな動物は？
+    <label><input type="radio" name="animal" value="いぬ" />いぬ</label>
+    <label><input type="radio" name="animal" value="うさぎ" />うさぎ</label>
+    <label><input type="radio" name="animal" value="くま" />くま</label>
+    <input id="btn" type="button" value="そうしん" />
+  </div>
+</form>
+
+<script>
+  function setRadioValue(name, value) {
+    let elems = document.querySelectorAll(`input[name="${name}"]`);
+
+    for(let elem of elems) {
+      if (elem.value === value) {
+        elem.checked = true;
+        break;
+      }
+    }
+  }
+
+  setRadioValue('animal', 'くま');
+</script>
