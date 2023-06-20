@@ -1,0 +1,29 @@
+<form>
+  <label for="file">ファイル：</label>
+  <input id="file" type="file" />
+  <input id="btn" type="button" value="内容を表示" />
+</form>
+<hr />
+<pre id="result"></pre>
+
+<script>
+  // 読み込むファイルの内容がテキストであることが前提の場合
+
+  let file = document.querySelector('#file');
+  let reader = new FileReader();
+
+  // 読み取り成功時に、その内容をページに反映
+  reader.addEventListener('load', function() {
+    document.querySelector('#result').textContent = reader.result;
+  }, false);
+
+  // 読み込み失敗時にエラーメッセージを表示する
+  reader.addEventListener('error', function() {
+    console.log(reader.error.message);
+  });
+
+  // ボタンクリックでファイルの読み取りを開始
+  document.querySelector('#btn').addEventListener('click', function() {
+    reader.readAsText(file.files[0], 'UTF-8')
+  }, true);
+</script>
