@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<form>
+  <div>
+    <label for="animal">好きな動物は？：</label><br />
+    <select id="animal" multiple>
+      <option value="いぬ">いぬ</option>
+      <option value="犬">犬</option>
+      <option value="dog">dog</option>
+    </select>
+    <input id="btn" type="button" value="わんわん">
+  </div>
+</form>
+
+<script>
+  function setListValue(name, values) {
+    let opts = document.querySelector(name).options;
+
+    for (let opt of opts) {
+      opt.selected = values.includes(opt.value);
+    }
+  }
+
+  setListValue('#animal', ['犬', 'dog']);
+</script>
