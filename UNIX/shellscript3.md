@@ -72,6 +72,7 @@ esac
 ---
 
 - 関数定義
+
 JavaScriptみたいに関数を定義して呼び出せる。
 
 今回はadd, commit, pushの処理を関数として定義。
