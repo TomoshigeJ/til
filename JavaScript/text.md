@@ -20,10 +20,6 @@ document.querySelector('#result_text').textContent = msg;
 document.querySelector('#result_html').innerHTML = msg;
 ```
 
-JS実行後のhtml
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1b7b5a4d-2bd0-45c1-a9e4-5a410a5188bd/Untitled.png)
-
 配下の子要素、テキストを完全に置き換える点ではどちらのプロパティも共通。
 
 与えられたテキストをHTML文字列として認識するかどうかの違いがある。
@@ -53,9 +49,9 @@ let list = document.querySelector('#list');
 console.log(list.innerHTML);
 /* 結果
 <li><a href="https://www.google.com/" class="my">
-      ぐーぐる</a></li>
+  ぐーぐる</a></li>
 <li><a href="https://www.yahoo.co.jp/" class="my2">
-      やふー</a></li>
+  やふー</a></li>
 */
 
 console.log(list.textContent);
@@ -103,10 +99,6 @@ textContentは子要素からそれぞれテキストだけを取り出してま
 とテキストを入力してそうしんボタンを押すと、ページに表示された「じょーん」をクリックするとダイアログボックスが表示されてします。
 
 →入力されたスクリプトが実行されてしまっている…
-
-こんな感じ
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eee08592-d7ba-422c-b373-d918b37b76f0/Untitled.png)
 
 エンドユーザーが入力したスクリプトが、ページ上で実行できてしまっており、ページ提供者の意図しないコードが不特定のユーザーのブラウザ上で勝手に実行されてしまう問題がある。
 
