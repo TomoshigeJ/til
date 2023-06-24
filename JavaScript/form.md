@@ -1,7 +1,4 @@
-<aside>
-📕 エンドユーザーからの入力を受け取る代表的な手段。
-
-</aside>
+# フォーム要素
 
 HTMLではさまざまな形のフォームが利用できる。
 
@@ -252,7 +249,7 @@ document.querySelector('#c_btn').addEventListener('click', setCheckValue('animal
 
 Elementオブジェクト(`<select>`要素)からoptionsプロパティにアスセスする流れ。
 
-```jsx
+```html
 <form>
   <div>
     <label for="animal">好きな動物は？：</label><br />
@@ -284,7 +281,7 @@ Elementオブジェクト(`<select>`要素)からoptionsプロパティにアス
 
 リストボックスの設定(JS部のみ)
 
-```jsx
+```html
 <!DOCTYPE html>
 <form>
   <div>
@@ -394,7 +391,7 @@ FileReaderを利用するには、まずloadイベントリスナーを定義し
 ```jsx
 // 読み込み失敗時にエラーメッセージを表示する
 reader.addEventListener('error', function() {
-	console.log(reader.error.message);
+  console.log(reader.error.message);
 });
 ```
 
