@@ -1,0 +1,25 @@
+<h1>じょんの犬小屋</h1>
+<input id="title" type="text" />
+<input id="btn" type="button" value="表示する"/>
+<p>ただの文章</p>
+<ul id="base">
+  <li>base</li>
+</ul>
+
+<script>
+  let title = document.querySelector('#title');
+  let btn = document.querySelector('#btn');
+  let base = document.querySelector('#base');
+
+  btn.addEventListener('click', function() {
+    let li = document.createElement('li');
+    let p = document.createElement('p');
+    li.textContent = title.value;
+
+    // いろいろ
+    //base.before(li);
+    base.prepend(li);
+    //base.append(li);
+    //base.after(li);
+  }, false);
+</script>
