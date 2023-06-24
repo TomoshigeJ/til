@@ -1,0 +1,18 @@
+<ul id="list"></ul>
+
+<script>
+  // よくない例
+  let animals = [
+    { name: 'dog', cute: 100 },
+    { name: 'dog2', cute: 200 },
+    { name: 'dog3', cute: 300 },
+  ];
+
+  // 配列animalsの内容を順番に<li>要素に整形
+  let list = document.querySelector('#list');
+  for (let animal of animals) {
+    let li = document.createElement('li');
+    li.textContent = `${animal.name} の可愛さレベルは ${animal.cute}Lv`;
+    list.append(li);
+  }
+</script>
