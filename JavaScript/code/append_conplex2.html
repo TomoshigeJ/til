@@ -1,0 +1,22 @@
+<ul id="list"></ul>
+
+<script>
+  let animals = [
+    { name: 'じょん', cute: 1000 },
+    { name: 'ぴょんきち', cute: 200 },
+    { name: 'モコモカ', cute: 200 },
+  ];
+
+  // コンテンツを貯めるためのDocumentFragmentオブジェクトを生成
+  let frag = document.createDocumentFragment();
+
+  // 配列animalsの内容を順番に<li>要素へ整形
+  for (let animal of animals) {
+    let li = document.createElement('li');
+    li.textContent = `${animal.name} の可愛さレベルは ${animal.cute}Lv`;
+    frag.append(li);
+  }
+
+  // <li>要素をまとめて文書ツリーに追加
+  document.querySelector('#list').append(frag);
+</script>
