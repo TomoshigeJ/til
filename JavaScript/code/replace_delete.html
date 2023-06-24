@@ -1,7 +1,43 @@
 <ul id="list">
-  <li><a href="javascript:volid(0)" data-image_no="100">じょん 100</a></li>
-  <li><a href="javascript:volid(0)" data-image_no="150">じょん 150</a></li>
-  <li><a href="javascript:volid(0)" data-image_no="200">じょん 200</a></li>
+  <li><a href="javascript:void(0)" data-image_no="100">じょん 100</a></li>
+  <li><a href="javascript:void(0)" data-image_no="150">じょん 150</a></li>
+  <li><a href="javascript:void(0)" data-image_no="200">じょん 200</a></li>
 </ul>
 <input id="del" type="button" value="削除する" disable />
 <div id="pic"></div>
+
+<script>
+  let list = document.querySelectorAll('#list a');
+  let pic = document.querySelector('#pic');
+  let del = document.querySelector('#del');
+
+  // 個々のリンクに順にリスナーを登録
+  for (let li of list) {
+    li.addEventListener('click', function(e) {
+      // data-image_no属性から<a>タグに紐づいた値を取得
+      let image_no = this.getAttribute('data-image_no');
+
+      let img = document.createElement('img');
+      img.src = `/Users/kery/images/test/${image_no}.png`;
+      img.alt = e.textContent;
+      img.height = 100;
+      img.width = 150;
+
+      if (pic.querySelector('img')) {
+        // <img>要素が存在する場合、新たな<img>要素で置換
+        pic.replaceChild(img, pic.lastChild);
+      } else {
+        // <img>要素が存在しない場合、新たに追加し、[削除]ボタンを有効に
+        del.disabled = false;
+        pic.append(img);
+      }
+    }, false);
+  }
+
+  // [削除]ボタンの処理
+  del.addEventListener('click', function() {
+    // <div id="pic">配下の子要素を削除し、[削除]ボタンを無効にする
+    pic.removeChild(pic.lastChild);
+    del.disabled = true;
+  }, false);
+</script>
