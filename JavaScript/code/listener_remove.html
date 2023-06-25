@@ -1,5 +1,6 @@
 <form>
   <input id="btn" type="button" value="ログ表示" />
+  <input id="btn2" type="button" value="イベント削除" />
 </form>
 
 <script>
@@ -11,5 +12,6 @@
   // イベントリスナーを登録
   btn.addEventListener('click', listener, false);
 
-  
+  // イベントリスナーを削除
+  btn2.removeEventListener('click', listener, false);
 </script>
