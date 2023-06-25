@@ -6,8 +6,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 50px;
-      height: 50px;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
       background-color: red;
     }
   </style>
@@ -17,31 +18,26 @@
 
   <script>
     const character = document.querySelector('#character');
+    let x = 0;  // x座標の初期値
+    let y = 0;  // y座標の初期値
 
-    // キーに対応する座標の変化量を定義
-    const keyMap = {
-      ArrowUp: { x: 0, y: -50 },
-      ArrowDown: { x: 0, y: 50 },
-      ArrowLeft: { x: -50, y: 0 },
-      ArrowRight: { x: 50, y: 0 },
-    };
-
-    // キーが押されたときの処理
     document.addEventListener('keydown', function(event) {
-      const key = event.key;
-      const move = keyMap[key];
-
-      if (move) {
-        // キャラクターの座標を変化させる
-        const { x, y } = move;
-        const currentX = parseInt(character.style.left) || 0;
-        const currentY = parseInt(character.style.top) || 0;
-        const newX = currentX + x;
-        const newY = currentY + y;
-
-        character.style.left = newX + 'px';
-        character.style.top = newY + 'px';
+      switch (event.key) {
+        case 'h':
+          x -= 20;  // 左に10px移動
+          break;
+        case 'j':
+          y += 20;  // 下に10px移動
+          break;
+        case 'k':
+          y -= 20;  // 上に10px移動
+          break;
+        case 'l':
+          x += 20;  // 右に10px移動
+          break;
       }
+
+      character.style.transform = `translate(${x}px, ${y}px)`;  // 座標を更新
     });
   </script>
 </body>
