@@ -1,0 +1,18 @@
+<div id="container" style="height: 500px; overflow: scroll;">
+  <div id="content" style="height: 2000px;">
+    Scroll me
+  </div>
+</div>
+
+<script>
+  const container = document.getElementById('container');
+  const content = document.getElementById('content');
+
+  // スクロールイベントリスナ
+  function handleScroll(event) {
+    console.log('Scrolling');
+  }
+
+  // passiveプロパティを使用してスクロールイベントリスナを登録
+  container.addEventListener('scroll', handleScroll, { passive: true });
+</script>

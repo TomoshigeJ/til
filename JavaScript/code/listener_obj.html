@@ -1,0 +1,16 @@
+<form>
+  <input id="btn" type="button" value="ログ表示" />
+</form>
+
+<script>
+  // EventListenerオブジェクトの準備
+  let data = {
+    mainTitle: '犬の散歩',
+    name: 'じょん',
+    handleEvent() {
+      console.log(`${this.mainTitle} / 犬の名前は ${this.name}です`);
+    }
+  };
+
+  document.querySelector('#btn').addEventListener('click', data, false);
+</script>

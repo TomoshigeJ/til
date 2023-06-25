@@ -1,0 +1,18 @@
+/* 要素 */
+body {
+  background-color: black;
+}
+
+/* クラス */
+.sentence {
+  width: 300px;
+  background-color: blueviolet;
+  color: aliceblue;
+}
+
+/* ID */
+#btn {
+  background-color: brown;
+  border-radius: 8px;
+  opacity: 0.9;
+}

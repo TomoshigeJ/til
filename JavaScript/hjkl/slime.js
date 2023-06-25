@@ -1,20 +1,21 @@
 const character = document.querySelector('#character');
 let x = 0;  // x座標の初期値
 let y = 0;  // y座標の初期値
+let move = 25; // 1キーでの移動距離
 
 document.addEventListener('keydown', function(event) {
   switch (event.key) {
     case 'h':
-      x -= 20;  // 左に10px移動
+      x -= move;  // 左
       break;
     case 'j':
-      y += 20;  // 下に10px移動
+      y += move;  // 下
       break;
     case 'k':
-      y -= 20;  // 上に10px移動
+      y -= move;  // 上
       break;
     case 'l':
-      x += 20;  // 右に10px移動
+      x += move;  // 右
       break;
   }
 
