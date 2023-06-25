@@ -12,7 +12,10 @@
     // e.stopPropagation();
 
     // イベント伝播を直ちにキャンセル(同じ要素に対しても)
-    e.stopImmediatePropagation();
+    // e.stopImmediatePropagation();
+
+    // イベント本来の挙動をキャンセルする
+    e.preventDefault();
   }, false);
 
   document.querySelector('#inner').addEventListener('click', function() {
