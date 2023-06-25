@@ -5,5 +5,5 @@ I like dog.
 I like dog.
 
 for (item of items) {
-  console.log(`$item`);
+  console.log(`${item}`);
 }
