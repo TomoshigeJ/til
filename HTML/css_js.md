@@ -13,7 +13,7 @@ Cascading Style Sheets：カスケーディング・スタイル・シート
   body {
     background-color: black;
   }
-</stuyle>
+</style>
 ```
 
 →bodyがセクレタ, background-colorがプロパティ, blacdが値
