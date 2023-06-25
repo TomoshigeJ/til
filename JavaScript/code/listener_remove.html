@@ -1,6 +1,5 @@
 <form>
   <input id="btn" type="button" value="ログ表示" />
-  <input id="btn2" type="button" value="イベント削除" />
 </form>
 
 <script>
@@ -13,5 +12,5 @@
   btn.addEventListener('click', listener, false);
 
   // イベントリスナーを削除
-  btn2.removeEventListener('click', listener, false);
+  btn.removeEventListener('click', listener, false);
 </script>
