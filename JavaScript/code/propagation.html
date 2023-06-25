@@ -1,0 +1,20 @@
+<div id="outer">
+  <p>outer要素</p>
+  <a id="inner" href="https://www.google.com/">inner要素</a>
+</div>
+
+<script>
+  // id="inner"要素のイベントリスナー
+  document.querySelector('#inner').addEventListener('click', function() {
+    alert('#innerリスナーの発生');
+  }, false);
+
+  document.querySelector('#inner').addEventListener('click', function() {
+    alert('#innerリスナー2の発生');
+  }, false);
+
+  // id="outer"要素のイベントリスナー
+  document.querySelector('#outer').addEventListener('click', function() {
+    alert('#outerリスナーの発生');
+  }, false);
+</script>
