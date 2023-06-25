@@ -8,8 +8,11 @@
   document.querySelector('#inner').addEventListener('click', function(e) {
     alert('#innerリスナーの発生');
 
-    // イベントの伝播をキャンセル
-    e.stopPropagation();
+    // イベントの伝播をキャンセル(上位、下位へ対して)
+    // e.stopPropagation();
+
+    // イベント伝播を直ちにキャンセル(同じ要素に対しても)
+    e.stopImmediatePropagation();
   }, false);
 
   document.querySelector('#inner').addEventListener('click', function() {
