@@ -5,8 +5,11 @@
 
 <script>
   // id="inner"要素のイベントリスナー
-  document.querySelector('#inner').addEventListener('click', function() {
+  document.querySelector('#inner').addEventListener('click', function(e) {
     alert('#innerリスナーの発生');
+
+    // イベントの伝播をキャンセル
+    e.stopPropagation();
   }, false);
 
   document.querySelector('#inner').addEventListener('click', function() {
