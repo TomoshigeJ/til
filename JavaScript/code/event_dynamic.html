@@ -1,0 +1,18 @@
+<div id="parent">
+  <input type="button" value="増えるボタン" data-add="1" />
+</div>
+
+<script>
+  let parent = document.querySelector('#parent');
+  // 目的の親要素に対してリスナー登録
+  parent.addEventListener('click', function(e) {
+    // 本来イベントを紐付けたい要素を判定
+    if (e.target.dataset.add) {
+      let btn = document.createElement('input');
+      btn.type = 'button';
+      btn.value = '増えるボタン';
+      btn.dataset.add = 1;
+      parent.append(btn);
+    }
+  }, false);
+</script>

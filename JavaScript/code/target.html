@@ -1,0 +1,10 @@
+<div id="parent">
+  <button id="child">Click me</button>
+</div>
+
+<script>
+  document.getElementById('parent').addEventListener('click', function(event) {
+    console.log(event.target);        // クリックされた要素を参照
+    console.log(event.currentTarget); // イベントリスナがアタッチされた要素を参照
+  });
+</script>
