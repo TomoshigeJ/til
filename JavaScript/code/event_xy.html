@@ -1,1 +1,13 @@
 <div id="main" style="position:absolute; margin:50px; top:50px; left:50px; width:200px; height:200px; border:1px solid Black; "></div>
+
+<script>
+  let main = document.querySelector('#main');
+  main.addEventListener('mousemove', function(e) {
+    main.innerHTML = `
+      screen: ${e.screenX} / ${e.screenY} <br />
+      page: ${e.pageX} / ${e.pageY} <br />
+      client: ${e.clientX} / ${e.clientY} <br />
+      offset: ${e.offsetX} / ${e.offsetY}
+      `;
+  }, false);
+</script>
