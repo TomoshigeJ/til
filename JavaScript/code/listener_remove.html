@@ -2,3 +2,14 @@
   <input id="btn" type="button" value="ログ表示" />
 </form>
 
+<script>
+  let btn = document.querySelector('#btn');
+  let listener = function() {
+    console.log('Hello John!');
+  };
+
+  // イベントリスナーを登録
+  btn.addEventListener('click', listener, false);
+
+  
+</script>
