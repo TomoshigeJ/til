@@ -53,10 +53,10 @@
 
 ばらばらに散らばっているノード群を組み立て、ドキュメントに追加する。
 
-```html
+```
 elem.append(node)
-	elem:要素オブジェクト
-	node:追加するノード
+  elem:要素オブジェクト
+  node:追加するノード
 ```
 
 今回はまず<a>要素を<li>要素へ追加し、その<li>要素を文書ツリー内の<ul>要素に追加。
@@ -151,9 +151,9 @@ DocumentFragmentとは文書の断片→組み立てたノードを一時的に�
 
 ```jsx
 elem.insertAdjacentHTML(pos, text);
-	elem:要素オブジェクト
-	pos :挿入位置
-	text:挿入する文字列
+  elem:要素オブジェクト
+  pos :挿入位置
+  text:挿入する文字列
 
 // 挿入位置の設定値
 beforebegin:elemの直前に挿入
@@ -170,17 +170,17 @@ afterend   :elemの直後に挿入
 
 ```jsx
 elem.replaceChild(after, before)
-	elem  :要素オブジェクト
-	after :置き換え後のノード
-	before:置き換え対象のノード
+  elem  :要素オブジェクト
+  after :置き換え後のノード
+  before:置き換え対象のノード
 ```
 
 ノードの削除には`removeChildメソッド`
 
 ```jsx
 elem.removeChild(node)
-	elem:要素オブジェクト
-	node:削除対象のノード
+  elem:要素オブジェクト
+  node:削除対象のノード
 ```
 
 置き換え対象ノード、削除対象ノードともに現在のノードに対する子ノードである必要あり。
