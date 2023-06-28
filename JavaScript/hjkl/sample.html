@@ -21,7 +21,25 @@
       let x = 0;  // x座標の初期値
       let y = 0;  // y座標の初期値
       let move = 10; // 1キーでの移動距離
+
+      document.addEventListener('keydown', function(event) {
+        switch (event.key) {
+          case 'ArrowUp':
+            y -= move;  // 上
+            break;
+          case 'ArrowDown':
+            y += move;  // 下
+            break;
+          case 'ArrowLeft':
+            x -= move;  // 左
+            break;
+          case 'ArrowRight':
+            x += move;  // 右
+            break;
+        }
       
+        character.style.transform = `translate(${x}px, ${y}px)`;  // 座標を更新
+      });
     </script>
   </body>
 </html>
