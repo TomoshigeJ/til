@@ -1,0 +1,41 @@
+/* header */
+header {
+  height: 70px;
+  background-color: bisque;
+}
+
+header h1 {
+  text-align: center
+}
+
+/* container */
+.container {
+  height: 630px;
+  background-color: azure;
+}
+
+.container .btn{
+  text-align: center;
+}
+
+#start-btn {
+  margin: 20px 0;
+  width: auto;
+  height: 100px;
+  font-size: 16px;
+  background-color: saddlebrown;
+  color: white;
+}
+
+#pyon {
+  width: 100px;
+  height: 100px;
+  
+}
+
+/* footer */
+footer {
+  height: 30px;
+  background-color: brown;
+}
+
