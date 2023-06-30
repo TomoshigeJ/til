@@ -8,8 +8,12 @@ let fortunes = [
   'じょんまみれになる吉だじょ〜ん。よかったじょ〜ん。'
 ];
 
+let resultImg = document.querySelector('#result');
+let imgPass = 'images/j.jpg';
+
 startBtn.addEventListener('click', function() {
   let randomIndex = Math.floor(Math.random() * fortunes.length);
   let fortune = fortunes[randomIndex];
+  resultImg.src = imgPass; 
   alert(fortune);
 }, false);
