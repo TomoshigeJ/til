@@ -2,16 +2,18 @@
 header {
   height: 70px;
   background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-header h1 {
-  text-align: center
+header img {
+  margin: 0 10px;
 }
 
 /* container */
 .container {
   height: 630px;
-  background-color: azure;
 }
 
 .container .btn{
@@ -27,15 +29,19 @@ header h1 {
   color: white;
 }
 
-#pyon {
-  width: 100px;
-  height: 100px;
-  
+.rabbit {
+  text-align: center
 }
 
 /* footer */
 footer {
   height: 30px;
-  background-color: brown;
+  background-color: seashell;
+}
+
+.footer-msg {
+  font-size: 10;
+  text-align: right;
+  margin: 10px;
 }
 
