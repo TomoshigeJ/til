@@ -173,3 +173,60 @@ p [1, 2, 3] * 3       # => [1, 2, 3, 1, 2, 3, 1, 2, 3]
 p [1, 2, 3] * '-'     # => "1-2-3"
 p [1, 2, 3].join('-') # => "1-2-3"
 ```
+
+# for式
+
+- 基本
+
+```ruby
+for <識別子> in <式> do
+  処理...
+end
+```
+
+```ruby
+a = ['d', 'o', 'g']
+for s in a do
+  p s
+end
+```
+
+---
+
+- doは省略可能、識別子の複数指定も可能
+
+```ruby
+for i, j in [[1, 2], [3, 4]]
+  p i + j
+end
+# => 3 (1 + 2)
+# => 7 (3 + 4)
+```
+
+---
+
+- for式とスコープ
+
+for式ではスコープが作成されない。
+
+内部で初期化した変数はその後のコードからも参照できる。
+
+```ruby
+for i in [2, 3, 4]
+  name = 'じょん'
+end
+p name # => "じょん"
+```
+
+これはif式でも同様にスコープが作成されない。
+
+が、each文ではスコープが作成されるので注意！
+
+```ruby
+[2, 3, 4].each do |i|
+  p i
+  dog = 'じょん'
+end
+p dog
+# => undefined local variable or method `dog' for main:Object (NameError)
+```
