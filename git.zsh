@@ -12,19 +12,19 @@ function gitCommitAndPush {
   git add .
 
   # git commit
-  echo git commit の結果
+  echo message: git commit の結果
   echo -----------------------------------------------------------------
   git commit -m $DATE
   echo -----------------------------------------------------------------
 
   # git push
-  echo git push の結果
+  echo message: git push の結果
   echo -----------------------------------------------------------------
   git push origin main
   echo -----------------------------------------------------------------
 
   # 完了
-  echo コミットしてプッシュしました!
+  echo message: コミットしてプッシュしました!
 }
 
 # 画面クリア
@@ -54,5 +54,5 @@ case $ANSWER in
 esac
 
 # 指定URLを開く
-#open https://github.com/TomoshigeJ
+open https://github.com/TomoshigeJ
 

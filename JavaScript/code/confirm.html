@@ -1,0 +1,12 @@
+<form id="fm">
+  <input type="submit" value="送信" />
+</form>
+
+<script>
+  document.querySelector('#fm').addEventListener('submit', function(e) {
+    if(!window.confirm('ページを送信してもよいですか？')) {
+      e.prevenDefault();
+    }
+  }, false);
+</script>
+
