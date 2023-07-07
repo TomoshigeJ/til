@@ -13,3 +13,21 @@ print "\n"
 end
 print "\n"
 # => 0 1 2 
+
+# catchとthrow
+def dog
+  throw :exit
+end
+
+catch(:exit) {
+  dog
+  p 1
+}
+p 2 # => 2
+
+def rabbit
+  catch(:n) do
+    throw :n, 100
+  end
+end
+p rabbit # => 100
