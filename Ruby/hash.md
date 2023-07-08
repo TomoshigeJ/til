@@ -81,3 +81,36 @@ def rabbit r, rr, rrr
 end
 p rabbit('rabbit', {r1: 1, r2: 2, r3: 2}, 222) # => {:r1=>1, :r2=>2, :r3=>2}
 ```
+
+---
+
+splat演算子(*)でハッシュを展開することができる。
+
+```ruby
+hash = {name: 'じょん', type: 'dog'}
+
+p hash
+# => {:name=>"じょん", :type=>"dog"}
+
+p *hash
+# => [:name, "じょん"]
+# => [:type, "dog"]
+```
+
+ハッシュはネストされた配列で表現できる。
+
+```ruby
+p hash.to_a # => [[:name, "じょん"], [:type, "dog"]]
+```
+
+```ruby
+def splat_hash(a, b)
+  p a
+  p b
+end
+splat_hash(*hash)
+# => [:name, "じょん"]
+# => [:type, "dog"]
+```
+
+→splat_hash(hash)と展開せずに渡すとArgumentError
