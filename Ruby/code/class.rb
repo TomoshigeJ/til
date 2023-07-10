@@ -50,3 +50,19 @@ end
 dogExt = DogExt.new(2, 8)
 p dogExt.method1    # => 2
 p dogExt.method3(3) # => 13
+
+# クラスの継承チェーンを確認
+p Dog.ancestors    # => [Dog, Object, Kernel, BasicObject]
+p DogExt.ancestors # => [DogExt, Dog, Object, Kernel, BasicObject]
+
+# 包含関係の比較
+p Dog < Object # => true
+p Dog > Object # => false
+
+# オブジェクトの持つインスタンス変数を調べる
+p Dog.instance_methods(false)    # => [:method1, :method2]
+p DogExt.instance_methods(false) # => [:method3]
+
+# オブジェクトの持つインスタンス変数を調べる
+p dog1.instance_variables   # => [:@a]
+p dogExt.instance_variables # => [:@b, :@a]
