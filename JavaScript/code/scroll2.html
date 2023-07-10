@@ -1,0 +1,115 @@
+<div id="main">
+  <div id="chap_1">
+    <h3>Part 1: JavaScriptとは？ </h3>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+    <p>1</p>
+    <p>22</p>
+    <p>333</p>
+    <p>4444</p>
+    <p>55555</p>
+    <p>666666</p>
+    <p>7777777</p>
+    <p>88888888</p>
+    <p>999999999</p>
+    <p>aaaaaaaaaa</p>
+    <p>!!!!!!!!!!</p>
+    <p>??????????</p>
+  </div>
+  <div id="chap_2">
+    <h3>h3</h3>
+    <p>Ruby</p>
+    <p>on</p>
+    <p>Rails</p>
+  </div>
+  <div id="chap_3">
+    <h3>h3</h3>
+    <p>3</p>
+    <p>33</p>
+    <p>333</p>
+  </div>
+</div>
+
+<script>
+  document.querySelector('#main').addEventListener('click', function(e) {
+    // ターゲット要素の先祖でid="chap_XX であるものを取得"
+    let p = e.target.closest('[id^="chap"]');
+    console.log(p);
+    if (p) {
+      // 移動先の章番号を生成&移動
+      let next = `#chap_${Number(p.id.split('_')[1]) + 1}`;
+      console.log(next);
+      document.querySelector(next)?.scrollIntoView(true);
+    }
+  }, false);
+</script>
