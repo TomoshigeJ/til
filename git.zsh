@@ -53,6 +53,10 @@ case $ANSWER in
     ;;
 esac
 
+# 待機
+echo message: 指定URLを開きます...
+sleep 2
+
 # 指定URLを開く
 open https://github.com/TomoshigeJ
 
