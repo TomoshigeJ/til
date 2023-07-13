@@ -1,0 +1,150 @@
+# Procとlambda
+
+ブロックをオブジェクトとして扱いたいとき、そんな時に使用するのが`Proc`
+
+Procはブロックをオブジェクト化したようなもの。
+
+- 基本
+
+ProcはProcクラスのコンストラクタにブロックを指定することで生成できる。
+
+実行する時は、Procのインスタンスに対して`callメソッド`を使用する。
+
+```ruby
+# Procの生成と呼び出し
+proc = Proc.new{|x| p x}
+proc.call('じょ〜ん') # => "じょ〜ん"
+```
+
+Procでは処理自体を遅延評価できる。初期値や現在の値の管理から解放される。
+
+(ようなこともできる)
+
+```ruby
+# Procオブジェクトの生成
+def get_counter start
+  Proc.new{ |up| start += up }
+end
+
+count_up = get_counter(1) # 初期値として1を設定。count_upはProcオブジェクトを参照。
+
+# ...たくさんの長い処理...
+
+count_up.call(1) # => 2 (count_upの参照するブロックの実行)
+
+# ...たくさんの長い処理...
+
+count_up.call(3) # => 5 (count_upの参照するブロックの実行)
+
+p count_up.call(2) # => 7
+p count_up.call(3) # => 10
+```
+
+---
+
+- Procとブロックの変換
+
+`ブロックへ変換`
+
+Procオブジェクトに `&` をつけて最後の引数に指定
+
+```ruby
+def func x
+  x + yield
+end
+
+proc = Proc.new {2}
+p func(1, &proc) # => 3
+```
+
+`Procへ変換`
+
+最後の仮引数に `&` をつけた名前を指定(参照する時は `&` をつけない)
+
+```ruby
+def func x, &proc
+  p x + proc.call
+end
+
+func(1) do
+  2
+end
+# => 3
+```
+
+---
+
+- lambda
+
+lambdaメソッドはProcインスタンスを生成するが、Procとは異なる動きをする。
+
+`基本`
+
+```ruby
+# 基本
+lmd = lambda{ |x| p x }
+lmd.call('すごいじょん') # => "すごいじょん"
+
+# 別の書き方
+lmd2 = ->(x){p x}
+lmd2.call('Ruby1.9から') # => "Ruby1.9から"
+```
+
+このよう作成したProcインスタンスはlambdaとも呼ばれ、オブジェクト化されていないブロックやProc.newで作成したProcインスタンスよりもメソッドに近い動きをする。
+
+→Proc.newで生成したオブジェクトをprocと呼ぶ
+
+`procとlambdaの違い`
+
+proc中のreturnでは生成元のスコープを脱出する。
+
+lambdaはそのブロック内でreturnすると呼び出し元に復帰する。
+
+procのreturn
+
+```ruby
+def func
+  proc = Proc.new{return 1}
+  proc.call
+  2 # これは実行されない
+end
+p func # => 1
+```
+
+lambdaのreturn
+
+```ruby
+def func
+  proc = lambda{return 1}
+  proc.call
+  2 # 実行される
+end
+p func # => 2
+```
+
+引数が足りない場合、メソッドでは例外(ArgumentError)が発生するが、procやオブジェクト化されていないブロックでは、余分な実引数を無視したり、足りない場合にnilを代入する。
+
+lambdaはメソッド同じ動きなのでArgumentErrorが発生。
+
+procの引数
+
+```ruby
+p1 = Proc.new{ |x, y| y }
+p p1.call(1) # => nil
+```
+
+lambdaの引数
+
+```ruby
+p2 = lambda{ |x, y| y }
+p p2.call(1) # => wrong number of arguments (given 1, expected 2) (ArgumentError)
+```
+
+`->を使用したlambda記法`
+
+引数はブロックの外で定義する。
+
+```ruby
+pr = ->(x, y){ p x * y }
+pr.call(2, 8) # => 16
+```
